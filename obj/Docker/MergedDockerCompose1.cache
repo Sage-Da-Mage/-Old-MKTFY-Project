@@ -1,0 +1,60 @@
+services:
+  mktfy.api:
+    build:
+      context: C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY
+      dockerfile: MKTFY.Api/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MKTFY.Api
+      target: base
+    container_name: MKTFY.Api
+    depends_on:
+      mktfy.db:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnctionStrings__DefaultConnection: Server=mktfy.db;Database=devdb; User=devdbuser;
+        Password=devdbpassword
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: mktfyapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/MKTFY.Api.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 3400
+      target: 80
+    - target: 80
+    - published: 34001
+      target: 443
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api:/app:rw
+    - C:\Users\Mirages1\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Mirages1\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mirages1\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Mirages1\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY:/src:rw
+  mktfy.db:
+    container_name: mktfy.db
+    environment:
+      POSTGRES_DB: devdb
+      POSTGRES_PASSWORD: devdbpassword
+      POSTGRES_USER: devdbuser
+    image: postgis/postgis:13-3.1-alpine
+    ports:
+    - published: 34010
+      target: 5432
+    restart: on-failure
+    volumes:
+    - mktfy-db:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  mktfy-db: {}

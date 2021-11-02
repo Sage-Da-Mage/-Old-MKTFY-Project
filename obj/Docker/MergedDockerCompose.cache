@@ -1,0 +1,40 @@
+services:
+  mktfy.api:
+    build:
+      context: C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY
+      dockerfile: MKTFY.Api/Dockerfile
+    depends_on:
+      mktfy.db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnctionStrings__DefaultConnection: Server=mktfy.db;Database=devdb; User=devdbuser;
+        Password=devdbpassword
+    image: mktfyapi
+    ports:
+    - published: 3400
+      target: 80
+    - target: 80
+    - published: 34001
+      target: 443
+    - target: 443
+    volumes:
+    - C:\Users\Mirages1\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Mirages1\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  mktfy.db:
+    container_name: mktfy.db
+    environment:
+      POSTGRES_DB: devdb
+      POSTGRES_PASSWORD: devdbpassword
+      POSTGRES_USER: devdbuser
+    image: postgis/postgis:13-3.1-alpine
+    ports:
+    - published: 34010
+      target: 5432
+    restart: on-failure
+    volumes:
+    - mktfy-db:/var/lib/postgresql/data:rw
+version: '3.4'
+volumes:
+  mktfy-db: {}

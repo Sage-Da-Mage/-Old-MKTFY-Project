@@ -1,0 +1,16 @@
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Services.deps.json
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Services.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\ref\MKTFY.Services.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Services.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.csproj.AssemblyReference.cache
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.AssemblyInfoInputs.cache
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.AssemblyInfo.cs
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.csproj.CoreCompileInputs.cache
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\ref\MKTFY.Services.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Models.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Repositories.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Models.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Repositories.pdb
