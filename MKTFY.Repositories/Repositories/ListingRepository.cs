@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MKTFY.Models.Entities;
 using MKTFY.Repositories.Repositories.Interfaces;
+using MKTFY.Shared.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,9 @@ namespace MKTFY.Repositories.Repositories
         {
 
             // Get the Listing Entity you are seeking
-            var result = await _context.Listings.FirstAsync(i => i.Id == id);
+            var result = await _context.Listings.FirstOrDefaultAsync(i => i.Id == id);
+            if (result == null)
+                throw new NotFoundException("The requested listing could not be found");
 
             // return the retrieved entry
             return result;
@@ -57,7 +60,10 @@ namespace MKTFY.Repositories.Repositories
         {
 
             // Get the entity to update
-            var result = await _context.Listings.FirstAsync(i => i.Id == src.Id) ;
+            var result = await _context.Listings.FirstOrDefaultAsync(i => i.Id == src.Id) ;
+            if (result == null)
+                throw new NotFoundException("The requested listing could not be found");
+
 
             // Preform the update on the Listing entity
             result.Title = src.Title;

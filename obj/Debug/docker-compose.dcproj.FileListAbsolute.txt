@@ -26,3 +26,5 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\MKTFY.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\MKTFY.Services.pdb
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\obj\Debug\docker-compose.dcproj.CopyComplete
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\MKTFY.Shared.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\MKTFY.Shared.pdb

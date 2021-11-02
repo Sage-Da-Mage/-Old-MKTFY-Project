@@ -15,3 +15,6 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\ref\MKTFY.Repositories.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.pdb
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.genruntimeconfig.cache
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\bin\Debug\net5.0\MKTFY.Shared.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\bin\Debug\net5.0\MKTFY.Shared.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.csproj.CopyComplete

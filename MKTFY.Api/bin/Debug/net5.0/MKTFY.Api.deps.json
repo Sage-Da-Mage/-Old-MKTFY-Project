@@ -33,8 +33,8 @@
     ".NETCoreApp,Version=v5.0": {
       "MKTFY.Api/1.0.0": {
         "dependencies": {
-          "MKTFY.Repositories": "1.0.0",
           "MKTFY.Services": "1.0.0",
+          "MKTFY.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.11",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.11.1",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
@@ -572,6 +572,7 @@
       "MKTFY.Repositories/1.0.0": {
         "dependencies": {
           "MKTFY.Models": "1.0.0",
+          "MKTFY.Shared": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
         },
         "runtime": {
@@ -591,6 +592,14 @@
         },
         "compile": {
           "MKTFY.Services.dll": {}
+        }
+      },
+      "MKTFY.Shared/1.0.0": {
+        "runtime": {
+          "MKTFY.Shared.dll": {}
+        },
+        "compile": {
+          "MKTFY.Shared.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2501,6 +2510,11 @@
       "sha512": ""
     },
     "MKTFY.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MKTFY.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -237,6 +237,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "MKTFY.Models": "1.0.0",
+          "MKTFY.Shared": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
         },
         "compile": {
@@ -244,6 +245,16 @@
         },
         "runtime": {
           "bin/placeholder/MKTFY.Repositories.dll": {}
+        }
+      },
+      "MKTFY.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MKTFY.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MKTFY.Shared.dll": {}
         }
       }
     }
@@ -706,6 +717,11 @@
       "type": "project",
       "path": "../MKTFY.Repositories/MKTFY.Repositories.csproj",
       "msbuildProject": "../MKTFY.Repositories/MKTFY.Repositories.csproj"
+    },
+    "MKTFY.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../MKTFY.Shared/MKTFY.Shared.csproj",
+      "msbuildProject": "../../MKTFY.Shared/MKTFY.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {

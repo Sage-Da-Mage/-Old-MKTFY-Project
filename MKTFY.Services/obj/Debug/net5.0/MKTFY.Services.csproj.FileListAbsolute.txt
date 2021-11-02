@@ -14,3 +14,6 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Repositories.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Models.pdb
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Repositories.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Shared.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\bin\Debug\net5.0\MKTFY.Shared.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.csproj.CopyComplete

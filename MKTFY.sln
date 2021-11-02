@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKTFY.Api", "MKTFY.Api\MKTFY.Api.csproj", "{E9920A15-7DA0-4039-B92A-CA816E398B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Api", "MKTFY.Api\MKTFY.Api.csproj", "{E9920A15-7DA0-4039-B92A-CA816E398B21}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{91300B73-D890-44B2-96C4-191EE7A10BA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKTFY.Services", "MKTFY.Services\MKTFY.Services.csproj", "{49E73BF6-BFE5-47AD-9F88-17ABAE42CFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Services", "MKTFY.Services\MKTFY.Services.csproj", "{49E73BF6-BFE5-47AD-9F88-17ABAE42CFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKTFY.Repositories", "MKTFY.Repositories\MKTFY.Repositories.csproj", "{71021731-88F1-4A40-9C8B-992B7ABE7323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Repositories", "MKTFY.Repositories\MKTFY.Repositories.csproj", "{71021731-88F1-4A40-9C8B-992B7ABE7323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKTFY.Models", "MKTFY.Models\MKTFY.Models.csproj", "{362BADAB-1C5E-444A-8801-AF74780B09BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Models", "MKTFY.Models\MKTFY.Models.csproj", "{362BADAB-1C5E-444A-8801-AF74780B09BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKTFY.Shared", "..\MKTFY.Shared\MKTFY.Shared.csproj", "{D3EE99DF-E214-4F1F-98A6-C638DC67F365}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,3 +41,6 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\bin\Debug\net5.0\MKTFY
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\obj\Debug\net5.0\MKTFY.Api.csproj.AssemblyReference.cache
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\bin\Debug\net5.0\MKTFY.Services.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\bin\Debug\net5.0\MKTFY.Services.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\bin\Debug\net5.0\MKTFY.Shared.dll
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\bin\Debug\net5.0\MKTFY.Shared.pdb
+C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api\obj\Debug\net5.0\MKTFY.Api.csproj.CopyComplete

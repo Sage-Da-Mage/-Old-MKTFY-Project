@@ -9,6 +9,7 @@
       "MKTFY.Repositories/1.0.0": {
         "dependencies": {
           "MKTFY.Models": "1.0.0",
+          "MKTFY.Shared": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.11",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
         },
@@ -220,6 +221,11 @@
         "runtime": {
           "MKTFY.Models.dll": {}
         }
+      },
+      "MKTFY.Shared/1.0.0": {
+        "runtime": {
+          "MKTFY.Shared.dll": {}
+        }
       }
     }
   },
@@ -391,6 +397,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
     "MKTFY.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MKTFY.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

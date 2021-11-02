@@ -278,6 +278,16 @@
         "runtime": {
           "bin/placeholder/MKTFY.Models.dll": {}
         }
+      },
+      "MKTFY.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MKTFY.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MKTFY.Shared.dll": {}
+        }
       }
     }
   },
@@ -858,11 +868,17 @@
       "type": "project",
       "path": "../MKTFY.Models/MKTFY.Models.csproj",
       "msbuildProject": "../MKTFY.Models/MKTFY.Models.csproj"
+    },
+    "MKTFY.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../MKTFY.Shared/MKTFY.Shared.csproj",
+      "msbuildProject": "../../MKTFY.Shared/MKTFY.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "MKTFY.Models >= 1.0.0",
+      "MKTFY.Shared >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.10"
     ]
@@ -894,6 +910,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY.Shared\\MKTFY.Shared.csproj": {
+              "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY.Shared\\MKTFY.Shared.csproj"
+            },
             "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj": {
               "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj"
             }

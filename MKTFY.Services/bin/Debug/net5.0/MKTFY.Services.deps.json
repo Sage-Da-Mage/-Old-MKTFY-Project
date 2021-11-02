@@ -196,10 +196,16 @@
       "MKTFY.Repositories/1.0.0": {
         "dependencies": {
           "MKTFY.Models": "1.0.0",
+          "MKTFY.Shared": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
         },
         "runtime": {
           "MKTFY.Repositories.dll": {}
+        }
+      },
+      "MKTFY.Shared/1.0.0": {
+        "runtime": {
+          "MKTFY.Shared.dll": {}
         }
       }
     }
@@ -349,6 +355,11 @@
       "sha512": ""
     },
     "MKTFY.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MKTFY.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
