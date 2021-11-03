@@ -9,6 +9,11 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      Auth0__Audience: http://mktfy.com
+      Auth0__ClientId: GAkPdd0zKdlWxpbExWhNlVCet0yV0ACT
+      Auth0__ClientSecret: Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
+      Auth0__Domain: https://dev-bcybq3la.us.auth0.com
+      Auth0__TokenRedirectUrl: http://localhost/redirect
       ConnctionStrings__DefaultConnection: Server=mktfy.db;Database=devdb; User=devdbuser;
         Password=devdbpassword
     image: mktfyapi
