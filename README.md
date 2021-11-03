@@ -12,6 +12,13 @@ Auth 0 info:
       Client Secret:  krSW6_zqLG-k0hagdZKHFOk-s1NQkM7tJwPzm5EqtLJR4DYxTlyd9wDLkXeyxKzh
     }
     
-    
-    
+    Auth0 Web App:
+    {
+      Client ID:        OZ7PuDHTUqnO2ZrR8h2qkhfuerMeGNUD
+      
+      Domain:           dev-bcybq3la.us.auth0.com
+      
+      Client Secret:    pTrroSZSUwqcrgbFkDNB1RFGJ_Q-AlxhuBY_tAEuhl7AHk5Gd0lLYIS37u92Tz6d
+      
+    }
 }
