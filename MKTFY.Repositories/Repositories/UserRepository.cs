@@ -49,7 +49,6 @@ namespace MKTFY.Repositories.Repositories
             // Perform the updates on the entity
             user.FirstName = src.FirstName;
             user.LastName = src.LastName;
-            user.Email = src.Email;
             user.Phone = src.Phone;
 
             // Save the updates to the real database
