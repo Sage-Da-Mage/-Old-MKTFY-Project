@@ -16,12 +16,13 @@ namespace MKTFY.Models.Entities
         }
 
         // Constructor we use to create a new Listing from a ListingAddVM model
-        public Listing(ListingAddVM src)
+        public Listing(ListingAddVM src, string userId)
         {
             Title = src.Title;
             Description = src.Description;
             Price = src.Price;
             Address = src.Address;
+            UserId = userId;
 
         }
 
@@ -55,6 +56,11 @@ namespace MKTFY.Models.Entities
 
         [Required]
         public decimal Price { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
+        public User User { get; set; }
+
     //}
 
 

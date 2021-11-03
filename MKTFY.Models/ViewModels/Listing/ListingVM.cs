@@ -26,6 +26,8 @@ namespace MKTFY.Models.ViewModels.Listing
             Price = src.Price;
             Address = src.Address;
             Created = src.Created;
+            UserId = src.UserId;
+            UserName = src.User?.FullName;
 
         }
 
@@ -42,6 +44,10 @@ namespace MKTFY.Models.ViewModels.Listing
         public string Address { get; set; }
 
         public DateTime Created { get; set; }
+
+        public string UserId { get; set; }
+
+        public string UserName { get; set; }
     //}
     }
 }

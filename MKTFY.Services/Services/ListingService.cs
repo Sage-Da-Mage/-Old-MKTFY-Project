@@ -19,10 +19,10 @@ namespace MKTFY.Services.Services
             _listingRepository = listingRepository;
         }
 
-        public async Task<ListingVM> Create(ListingAddVM src)
+        public async Task<ListingVM> Create(ListingAddVM src, string userId)
         {
             //Create the new Listing entity
-            var newEntity = new Listing(src);
+            var newEntity = new Listing(src, userId);
 
             // Have the repository create the new listing
             var result = await _listingRepository.Create(newEntity);

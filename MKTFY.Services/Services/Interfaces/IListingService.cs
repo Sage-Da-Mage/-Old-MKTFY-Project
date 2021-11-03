@@ -10,7 +10,7 @@ namespace MKTFY.Services.Services.Interfaces
     public interface IListingService
     {
         // Create a new Listing
-        Task<ListingVM> Create(ListingAddVM src);
+        Task<ListingVM> Create(ListingAddVM src, string userId);
 
         //Get a single existing Listing by its Id
         Task<ListingVM> Get(Guid id);

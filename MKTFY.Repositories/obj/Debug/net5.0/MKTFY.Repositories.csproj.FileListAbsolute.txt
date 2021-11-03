@@ -13,7 +13,6 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.AssemblyInfoInputs.cache
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.AssemblyInfo.cs
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.csproj.CoreCompileInputs.cache
-C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.csproj.CopyComplete
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\ref\MKTFY.Repositories.dll
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.pdb
