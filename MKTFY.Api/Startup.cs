@@ -37,7 +37,10 @@ namespace MKTFY.Api
         {
             // Configure the dependency injection
             services.AddScoped<IListingService, ListingService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IListingRepository, ListingRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
 
@@ -96,7 +99,7 @@ namespace MKTFY.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MKTFY.Api v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

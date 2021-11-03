@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: MKTFY.Api/Dockerfile
     ports:
-        - "3400:80"
+        - "34000:80"
         - "34001:443"
 
     environment:
