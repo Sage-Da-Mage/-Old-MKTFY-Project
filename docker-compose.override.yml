@@ -4,14 +4,6 @@ services:
   mktfy.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
 
       - Auth0__ClientId=GAkPdd0zKdlWxpbExWhNlVCet0yV0ACT
       - Auth0__ClientSecret=Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
-
-    ports:
-      - "80"
-      - "443"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

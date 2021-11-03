@@ -8,7 +8,6 @@ services:
         condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
       Auth0__Audience: http://mktfy.com
       Auth0__ClientId: GAkPdd0zKdlWxpbExWhNlVCet0yV0ACT
       Auth0__ClientSecret: Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
@@ -18,15 +17,10 @@ services:
         Password=devdbpassword
     image: mktfyapi
     ports:
-    - published: 3400
+    - published: 34000
       target: 80
-    - target: 80
     - published: 34001
       target: 443
-    - target: 443
-    volumes:
-    - C:\Users\Mirages1\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\Mirages1\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   mktfy.db:
     container_name: mktfy.db
     environment:

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u4cCpaNFiS0m03/OLG+hR32or4FPDICw1oPMovxCxJvRTWlSNeE0wZcOfKx0VrwNrjm6IoP0NprdGfAP52Sngw==",
+  "dgSpecHash": "ERNYUxBeQ4djksyTlNuibYOZAn07HsaEbR2iDFfjWpCGGraFdIjjindrtA3igowBuicFN2o1WP4zlSkb44ALUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Api\\MKTFY.Api.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Mirages1\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",

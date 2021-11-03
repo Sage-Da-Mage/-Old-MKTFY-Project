@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MKTFY.Models.ViewModels.Listing;
@@ -13,6 +14,7 @@ namespace MKTFY.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ListingController : ControllerBase
     {
         // Set up dependency injection for IListingService
@@ -34,7 +36,7 @@ namespace MKTFY.Api.Controllers
         }
 
         // Get a specific Listing by its Id
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<ListingVM>> Get([FromRoute] Guid id)
         {
             // Get the requested Listing entity from the service
