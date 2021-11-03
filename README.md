@@ -21,4 +21,14 @@ Auth 0 info:
       Client Secret:    pTrroSZSUwqcrgbFkDNB1RFGJ_Q-AlxhuBY_tAEuhl7AHk5Gd0lLYIS37u92Tz6d
       
     }
+    
+    Auth0 Backend App:
+    {
+      Client ID:        GAkPdd0zKdlWxpbExWhNlVCet0yV0ACT
+      
+      Domain:           dev-bcybq3la.us.auth0.com
+      
+      Client Secret:    Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
+    }
+    
 }
