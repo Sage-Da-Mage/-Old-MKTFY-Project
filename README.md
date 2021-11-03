@@ -31,4 +31,10 @@ Auth 0 info:
       Client Secret:    Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
     }
     
+    MKTFY Admin Role:
+      
+      Email:            2sagehenderson+MKTFYadmin@gmail.com
+      
+      Password:         Mirages1.
+    
 }
