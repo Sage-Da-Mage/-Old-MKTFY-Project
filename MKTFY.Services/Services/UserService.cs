@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MKTFY.Models.Entities;
+using MKTFY.Models.ViewModels.User;
 using MKTFY.Repositories.Repositories.Interfaces;
 using MKTFY.Services.Services.Interfaces;
 using System;
@@ -15,86 +16,51 @@ namespace MKTFY.Services.Services
 {
     public class UserService : IUserService
     {
-        private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
-        private readonly HttpClient _httpClient;
 
         public UserService(IConfiguration configuration, IUserRepository userRepository)
         {
-            _configuration = configuration;
             _userRepository = userRepository;
-            _httpClient = new HttpClient();
         }
 
-        // Create the user if it's new or update it if it already exists
-        // NOTE: Returns an error string or null for a success
-        public async Task<string> CreateOrUpdate(string accessToken)
+        public async Task<UserVM> Create(UserAddVM src)
         {
-            // Get the updated profile information
-            var result = await ProfileRequest(accessToken);
-            if (result == null)
-                return "Unable to update the user profile";
+            // Create the new user entity
+            var newEntity = new User(src);
 
-            // Get the existing user
-            var user = await _userRepository.GetById(result.sub);
+            // Have the repository create the new user
+            var result = await _userRepository.Create(newEntity);
 
-            // Create or Update the user
-            var userData = new User
-            {
-                Id = result.sub,
-                FirstName = result.user_metadata?.firstName,
-                LastName = result.user_metadata?.lastName,
-                Email = result.email,
-                Phone = result.user_metadata?.phone
-            };
-            if (user == null)
-                await _userRepository.Create(userData);
-            else
-                await _userRepository.Update(userData);
+            // Create the UserVM we want to return to the client
+            var model = new UserVM(result);
 
-            return null;
+            // Return a UserVM
+            return model;
         }
 
-        // Get the user's profile information from Auth0
-        private async Task<UserInfoResponse> ProfileRequest(string accessToken)
+        public async Task<UserVM> Get(string id)
         {
-            var authUrl = _configuration.GetSection("Auth0").GetValue<string>("Domain");
+            // Get the requested User entity from the repository
+            var result = await _userRepository.GetById(id);
 
-            // Build the request
-            var req = new HttpRequestMessage(HttpMethod.Get, authUrl + "/userInfo");
-            req.Headers.Add("Authorization", "Bearer " + accessToken);
-            var res = await _httpClient.SendAsync(req);
+            // Create the UserVM we want to return to the client
+            var model = new UserVM(result);
 
-            if (!res.IsSuccessStatusCode)
-                return null;
-
-            var result = await res.Content.ReadFromJsonAsync<UserInfoResponse>();
-            return result;
+            // Return the UserVM
+            return model;
         }
-    }
 
-    public class UserInfoResponse
-    {
-        public string sub { get; set; }
+        public async Task<UserVM> Update(UserUpdateVM src)
+        {
+            // Have the repository update the user
+            var updateData = new User(src);
+            var result = await _userRepository.Update(updateData);
 
-        public string email { get; set; }
+            // Create the UserVM we want to return to the client
+            var model = new UserVM(result);
 
-        [JsonPropertyName("http://schemas.mktfy.com/user_metadata")]
-        public UserInfoResponseMeta user_metadata { get; set; }
-    }
-
-    public class UserInfoResponseMeta
-    {
-        public string firstName { get; set; }
-
-        public string lastName { get; set; }
-
-        public string phone { get; set; }
-
-        public string country { get; set; }
-
-        public string city { get; set; }
-
-        public string address { get; set; }
+            // Return a 200 response with the UserVM
+            return model;
+        }
     }
 }

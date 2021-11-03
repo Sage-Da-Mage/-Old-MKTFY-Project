@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MKTFY.Models.ViewModels.User;
 using MKTFY.Services.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,20 +22,37 @@ namespace MKTFY.Api.Controllers
             _userService = userService;
         }
 
-        // Update the user profile
-        [HttpPut("profile")]
-        [Authorize]
-        public async Task<ActionResult> ProfileUpdate()
+        // Create a new user
+        [HttpPost]
+        public async Task<ActionResult<UserVM>> Create([FromBody] UserAddVM data)
         {
-            // Get the Auth Token from the header
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            // Have the service create the new user
+            var result = await _userService.Create(data);
 
-            // Perform the update
-            var result = await _userService.CreateOrUpdate(accessToken);
-            if (result != null)
-                return BadRequest(new { message = "Unable to update the user profile" });
+            // Return a 200 response with the UserVM
+            return Ok(result);
+        }
 
-            return Ok();
+        // Get a specific user by Id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<UserVM>> Get([FromRoute] string id)
+        {
+            // Get the requested User entity from the service
+            var result = await _userService.Get(id);
+
+            // Return a 200 response with the UserVM
+            return Ok(result);
+        }
+
+        // Update a user
+        [HttpPut]
+        public async Task<ActionResult<UserVM>> Update([FromBody] UserUpdateVM data)
+        {
+            // Update User entity from the service
+            var result = await _userService.Update(data);
+
+            // Return a 200 response with the UserVM
+            return Ok(result);
         }
     }
 }
