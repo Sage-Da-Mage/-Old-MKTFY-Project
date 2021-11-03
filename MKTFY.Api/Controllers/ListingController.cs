@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MKTFY.Api.Helpers;
 using MKTFY.Models.ViewModels.Listing;
 using MKTFY.Services.Services.Interfaces;
 using MKTFY.Shared.Exceptions;
@@ -28,8 +29,12 @@ namespace MKTFY.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<ListingVM>> Create([FromBody] ListingAddVM data)
         {
+
+            // Get the user Id
+            var userId = User.GetId();
+
             // Have the service create the new Listing
-            var result = await _listingService.Create(data);
+            var result = await _listingService.Create(data, userId);
 
             //Return as 200 message along with the ListingVM
             return Ok(result);

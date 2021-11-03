@@ -36,7 +36,7 @@ namespace MKTFY.Repositories.Repositories
         {
 
             // Get the Listing Entity you are seeking
-            var result = await _context.Listings.FirstOrDefaultAsync(i => i.Id == id);
+            var result = await _context.Listings.Include(listing => listing.User).FirstOrDefaultAsync(i => i.Id == id);
             if (result == null)
                 throw new NotFoundException("The requested listing could not be found");
 
