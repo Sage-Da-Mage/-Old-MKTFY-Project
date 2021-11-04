@@ -13,12 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Repositories", "MKTFY
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Models", "MKTFY.Models\MKTFY.Models.csproj", "{362BADAB-1C5E-444A-8801-AF74780B09BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Shared", "..\MKTFY.Shared\MKTFY.Shared.csproj", "{D3EE99DF-E214-4F1F-98A6-C638DC67F365}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15B50577-9452-4403-986F-81E575C7D353}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Shared", "MKTFY.Shared\MKTFY.Shared.csproj", "{13419CA0-F93A-4598-8B9E-116D8B93C0AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,10 +46,10 @@ Global
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{362BADAB-1C5E-444A-8801-AF74780B09BE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3EE99DF-E214-4F1F-98A6-C638DC67F365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13419CA0-F93A-4598-8B9E-116D8B93C0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13419CA0-F93A-4598-8B9E-116D8B93C0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13419CA0-F93A-4598-8B9E-116D8B93C0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13419CA0-F93A-4598-8B9E-116D8B93C0AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
