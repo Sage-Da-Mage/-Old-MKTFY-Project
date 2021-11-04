@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using MKTFY.Api.Helpers;
 using MKTFY.Models.ViewModels.Listing;
 using MKTFY.Services.Services.Interfaces;
-using MKTFY.Shared.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
