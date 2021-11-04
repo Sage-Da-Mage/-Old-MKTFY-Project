@@ -469,7 +469,6 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "MKTFY.Models": "1.0.0",
-          "MKTFY.Shared": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10"
         },
         "compile": {
@@ -492,16 +491,6 @@
         },
         "runtime": {
           "bin/placeholder/MKTFY.Services.dll": {}
-        }
-      },
-      "MKTFY.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/MKTFY.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MKTFY.Shared.dll": {}
         }
       }
     }
@@ -1455,17 +1444,11 @@
       "type": "project",
       "path": "../MKTFY.Services/MKTFY.Services.csproj",
       "msbuildProject": "../MKTFY.Services/MKTFY.Services.csproj"
-    },
-    "MKTFY.Shared/1.0.0": {
-      "type": "project",
-      "path": "../../MKTFY.Shared/MKTFY.Shared.csproj",
-      "msbuildProject": "../../MKTFY.Shared/MKTFY.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "MKTFY.Services >= 1.0.0",
-      "MKTFY.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.11.1",
@@ -1500,9 +1483,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY.Shared\\MKTFY.Shared.csproj": {
-              "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY.Shared\\MKTFY.Shared.csproj"
-            },
             "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Services\\MKTFY.Services.csproj": {
               "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Services\\MKTFY.Services.csproj"
             }
