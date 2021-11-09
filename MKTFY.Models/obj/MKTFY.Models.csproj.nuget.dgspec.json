@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj": {}
+    "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\MKTFY.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj": {
+    "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\MKTFY.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj",
+        "projectUniqueName": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\MKTFY.Models.csproj",
         "projectName": "MKTFY.Models",
-        "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\MKTFY.Models.csproj",
-        "packagesPath": "C:\\Users\\Mirages1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Models\\obj\\",
+        "projectPath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\MKTFY.Models.csproj",
+        "packagesPath": "C:\\Users\\15875\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mirages1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\15875\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

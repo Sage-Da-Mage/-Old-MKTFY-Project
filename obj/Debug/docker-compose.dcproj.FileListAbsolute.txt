@@ -35,3 +35,39 @@ C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\bin\Debug\MKTFY.Models.pdb
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.deps.json
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.runtimeconfig.json
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.runtimeconfig.dev.json
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\appsettings.Development.json
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\appsettings.json
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.exe
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Repositories.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Shared.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Services.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Models.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Npgsql.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Repositories.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Shared.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Services.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Models.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

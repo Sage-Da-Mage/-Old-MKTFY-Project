@@ -14,10 +14,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY\MKTFY.Api:/app
-      - C:\Users\Mirages1\Desktop\LaunchPad\MKTFY\MKTFY:/src
-      - C:\Users\Mirages1\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\Mirages1\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api:/app
+      - C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT:/src
+      - C:\Users\15875\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\15875\.nuget\packages\:/root/.nuget/packages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 

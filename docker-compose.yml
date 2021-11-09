@@ -11,7 +11,7 @@ services:
         - "34001:443"
 
     environment:
-        - ConnctionStrings__DefaultConnection=Server=mktfy.db;Database=devdb; User=devdbuser; Password=devdbpassword
+        - ConnectionStrings__DefaultConnection=Server=mktfy.db;Database=devdb; User Id=devdbuser; Password=devdbpassword
 
         - Auth0__Domain=https://dev-bcybq3la.us.auth0.com
         - Auth0__Audience=http://mktfy.com

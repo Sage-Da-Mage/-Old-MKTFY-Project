@@ -1473,19 +1473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mirages1\\.nuget\\packages\\": {}
+    "C:\\Users\\15875\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Api\\MKTFY.Api.csproj",
+      "projectUniqueName": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Api\\MKTFY.Api.csproj",
       "projectName": "MKTFY.Api",
-      "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Api\\MKTFY.Api.csproj",
-      "packagesPath": "C:\\Users\\Mirages1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Api\\obj\\",
+      "projectPath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Api\\MKTFY.Api.csproj",
+      "packagesPath": "C:\\Users\\15875\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mirages1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\15875\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1499,8 +1499,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Services\\MKTFY.Services.csproj": {
-              "projectPath": "C:\\Users\\Mirages1\\Desktop\\LaunchPad\\MKTFY\\MKTFY\\MKTFY.Services\\MKTFY.Services.csproj"
+            "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Services\\MKTFY.Services.csproj": {
+              "projectPath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Services\\MKTFY.Services.csproj"
             }
           }
         }
