@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15B50577-9452-4403-986F-81E575C7D353}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		buildspec.api.yml = buildspec.api.yml
+		Dockerrun.aws.json = Dockerrun.aws.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MKTFY.Shared", "MKTFY.Shared\MKTFY.Shared.csproj", "{13419CA0-F93A-4598-8B9E-116D8B93C0AD}"
