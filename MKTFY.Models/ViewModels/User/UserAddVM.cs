@@ -23,5 +23,20 @@ namespace MKTFY.Models.ViewModels.User
 
         [Required]
         public string Phone { get; set; }
+
+        [Required]
+        public string UserAddress { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Province { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+
+
     }
 }

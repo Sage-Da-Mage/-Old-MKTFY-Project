@@ -16,16 +16,26 @@ namespace MKTFY.Models.ViewModels.Listing
         public Guid Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        // May want to add a check for if it is a proper categoryId in future (not a number unassigned to an id)
+        public int CategoryId { get; set; }
+        
+        [Required]
+        public decimal Price { get; set; }
+
+        [Required]
+        public string ProductName { get; set; }
 
         [Required]
         public string Description { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
+        public string Condition { get; set; }
 
         [Required]
         public string Address { get; set; }
+
+        [Required]
+        public string City { get; set; }
 
     }
 }

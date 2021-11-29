@@ -21,11 +21,13 @@ namespace MKTFY.Models.ViewModels.Listing
         public ListingVM(Entities.Listing src)
         {
             Id = src.Id;
-            Title = src.Title;
-            Description = src.Description;
+            CategoryId = src.CategoryId;
             Price = src.Price;
+            ProductName = src.ProductName;
+            Description = src.Description;
+            Condition = src.Condition;
             Address = src.Address;
-            Created = src.Created;
+            City = src.City;
             UserId = src.UserId;
             UserName = src.User?.FullName;
 
@@ -35,15 +37,25 @@ namespace MKTFY.Models.ViewModels.Listing
     //{
         public Guid Id { get; set; }
 
-        public string Title { get; set; }
-
-        public string Description { get; set; }
+        public int CategoryId { get; set; }
 
         public decimal Price { get; set; }
 
+        public DateTime DateCreated { get; set; }
+
+        public string ProductName { get; set; }
+
+        public string Description { get; set; }
+
+        public string Condition { get; set; }
+
         public string Address { get; set; }
 
-        public DateTime Created { get; set; }
+        public string City { get; set; }
+
+        public DateTime DateSold { get; set; }
+
+        public string StatusOfTransaction { get; set; }
 
         public string UserId { get; set; }
 

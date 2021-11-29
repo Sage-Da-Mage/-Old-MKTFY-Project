@@ -23,5 +23,24 @@ namespace MKTFY.Repositories.Repositories.Interfaces
 
         // Delete a listing
         Task Delete(Guid id);
+
+        // ADD THE METHODS BELOW (after adding them to ListingRepository.cs):
+
+        // GetbyCategory (int category Id, string City, string userId){
+        //}
+
+        // GetBySearchTerm(string searchTermLowerCase, string City, string userId){
+        //}
+
+        // GetPickupInfo(Guid id){
+        // }
+
+        // GetMyPurchases(string buyerId){
+        // }
+
+        // ChangeTransactionStatus(Guid id, string status, string buyerId){
+        // }
+
+
     }
 }
