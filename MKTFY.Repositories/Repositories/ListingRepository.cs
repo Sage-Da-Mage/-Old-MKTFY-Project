@@ -19,11 +19,14 @@ namespace MKTFY.Repositories.Repositories
             _context = context;
         }
 
+        // UPDATE THE BELOW METHODS TO A BETTER STANDARD + UPLOADING IMAGES
+
+
         // Create a new listing
         public async Task<Listing> Create(Listing src)
         {
             // Add and save changes made to the database
-            src.Created = DateTime.UtcNow;
+            src.DateCreated = DateTime.UtcNow;
             _context.Listings.Add(src);                     // Preform the add in the memory
             await _context.SaveChangesAsync();              // Save the changes to the database
 
@@ -66,10 +69,13 @@ namespace MKTFY.Repositories.Repositories
 
 
             // Preform the update on the Listing entity
-            result.Title = src.Title;
-            result.Description = src.Description;
-            result.Address = src.Address;
+            result.CategoryId = src.CategoryId;
             result.Price = src.Price;
+            result.ProductName = src.ProductName;
+            result.Description = src.Description;
+            result.Condition = src.Condition;
+            result.Address = src.Address;
+            result.City = src.City;
 
             // Save the updates to the database
             await _context.SaveChangesAsync();
@@ -90,5 +96,22 @@ namespace MKTFY.Repositories.Repositories
             // Remove the entity from the database
             await _context.SaveChangesAsync();
         }
+
+        // ADD THE METHODS BELOW:
+
+        // GetbyCategory (int category Id, string City, string userId){
+        //}
+
+        // GetBySearchTerm(string searchTermLowerCase, string City, string userId){
+        //}
+
+        // GetPickupInfo(Guid id){
+        // }
+
+        // GetMyPurchases(string buyerId){
+        // }
+
+        // ChangeTransactionStatus(Guid id, string status, string buyerId){
+        // }
     }
 }

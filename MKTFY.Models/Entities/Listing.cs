@@ -18,10 +18,13 @@ namespace MKTFY.Models.Entities
         // Constructor we use to create a new Listing from a ListingAddVM model
         public Listing(ListingAddVM src, string userId)
         {
-            Title = src.Title;
-            Description = src.Description;
+            CategoryId = src.CategoryId;
             Price = src.Price;
+            ProductName = src.ProductName;
+            Description = src.Description;
+            Condition = src.Condition;
             Address = src.Address;
+            City = src.City;
             UserId = userId;
 
         }
@@ -30,38 +33,60 @@ namespace MKTFY.Models.Entities
         public Listing(ListingUpdateVM src)
         {
             Id = src.Id;
-            Title = src.Title;
-            Description = src.Description;
+            CategoryId = src.CategoryId;
             Price = src.Price;
+            ProductName = src.ProductName;
+            Description = src.Description;
+            Condition = src.Condition;
             Address = src.Address;
-
+            City = src.City;
         }
 
     //  Our normal properties, all are required and the Id is a key
-    //{ 
         [Key]
         public Guid Id { get; set; }
 
-        [Required]
-        public string Title { get; set; }
 
+        // An int for identifying the category, current list in ListingAddVM.cs
         [Required]
-        public string Description { get; set; }
-
-        [Required]
-        public string Address { get; set; }
-
-        [Required]
-        public DateTime Created { get; set; }
+        public int CategoryId { get; set; }
+        
+        // DETERMINE IF I NEED TO ADD A CATEGORY CLASS TO THE PROJECT
+        //public Category Category { get; set; }
 
         [Required]
         public decimal Price { get; set; }
 
         [Required]
+        public DateTime DateCreated { get; set; }
+
+        [Required]
+        public string ProductName { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public string Condition { get; set; }
+
+        public string Address { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        public DateTime? DateSold { get; set; }
+        
+        public string BuyerId { get; set; }
+        
+        [Required]
+        public string StatusOfTransaction { get; set; }
+
+
+        // The user who created the listing
+        [Required]
         public string UserId { get; set; }
         public User User { get; set; }
 
-    //}
+
 
 
     }

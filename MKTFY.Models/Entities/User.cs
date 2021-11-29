@@ -18,8 +18,13 @@ namespace MKTFY.Models.Entities
             Id = src.Id;
             FirstName = src.FirstName;
             LastName = src.LastName;
-            Email = src.Email;
             Phone = src.Phone;
+            UserAddress = src.UserAddress;
+            City = src.City;
+            Province = src.Province;
+            Country = src.Country;
+            Email = src.Email;
+
         }
 
         public User(UserUpdateVM src)
@@ -28,6 +33,10 @@ namespace MKTFY.Models.Entities
             FirstName = src.FirstName;
             LastName = src.LastName;
             Phone = src.Phone;
+            UserAddress = src.UserAddress;
+            City = src.City;
+            Province = src.Province;
+            Country = src.Country;
         }
 
         [Required]
@@ -46,12 +55,39 @@ namespace MKTFY.Models.Entities
         [Required]
         public string Phone { get; set; }
 
+        [Required]
+        public string UserAddress { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Province { get; set; }
+
+        [Required]
+        public string Country { get; set; }
+
+
+        // Check if I need a datecreated for a user
+        [Required]
+        public DateTime DateCreated { get; set; }
+
+        // Generate a full name from the first and last name
         [NotMapped]
         public string FullName
         {
             get
             {
                 return FirstName + " " + LastName;
+            }
+        }
+
+        [NotMapped]
+        public string FullAddress
+        {
+            get
+            {
+                return ($"{UserAddress}, {City}, {Province}, {Country}");
             }
         }
 

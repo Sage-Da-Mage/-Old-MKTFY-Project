@@ -18,6 +18,9 @@ namespace MKTFY.Repositories.Repositories
             _context = context;
         }
 
+
+        // UPDATE THE BELOW METHODS TO A BETTER LEVEL
+
         // Create a new listing
         public async Task<User> Create(User src)
         {
@@ -46,10 +49,13 @@ namespace MKTFY.Repositories.Repositories
             // Get the entity
             var user = await _context.Users.FirstAsync(i => i.Id == src.Id);
 
-            // Perform the updates on the entity
+            // Perform the updates on the entity -- (but not datecreated or email, those are the same)
             user.FirstName = src.FirstName;
             user.LastName = src.LastName;
             user.Phone = src.Phone;
+            user.City = src.City;
+            user.Province = src.Province;
+            user.Country = src.Country;
 
             // Save the updates to the real database
             await _context.SaveChangesAsync();

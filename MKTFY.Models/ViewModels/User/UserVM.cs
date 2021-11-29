@@ -12,9 +12,13 @@ namespace MKTFY.Models.ViewModels.User
         {
             Id = src.Id;
             FirstName = src.FirstName;
-            LastName = src.LastName;
+            LastName = src.LastName;            
             Email = src.Email;
             Phone = src.Phone;
+            UserAddress = src.UserAddress;
+            City = src.City;
+            Province = src.Province;
+            Country = src.Country;
         }
 
         public string Id { get; set; }
@@ -26,5 +30,13 @@ namespace MKTFY.Models.ViewModels.User
         public string Email { get; set; }
 
         public string Phone { get; set; }
+
+        public string UserAddress { get; set; }
+
+        public string City { get; set; }
+
+        public string Province { get; set; }
+
+        public string Country { get; set; }
     }
 }
