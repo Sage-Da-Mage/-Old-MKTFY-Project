@@ -23,13 +23,17 @@ namespace MKTFY.Services.Services
             _userRepository = userRepository;
         }
 
-        public async Task<UserVM> Create(UserAddVM src)
+        public async Task<UserVM> Create(UserAddVM src, string userId)
         {
             // Create the new user entity
             var newEntity = new User(src);
 
+            newEntity.Id = userId;
+
             // Have the repository create the new user
             var result = await _userRepository.Create(newEntity);
+
+
 
             // Create the UserVM we want to return to the client
             var model = new UserVM(result);

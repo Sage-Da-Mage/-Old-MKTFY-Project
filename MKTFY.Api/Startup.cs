@@ -60,8 +60,6 @@ namespace MKTFY.Api
                 );
                 //}
 
-
-
             services.AddControllers();
 
             // Setup authentication

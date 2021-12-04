@@ -9,8 +9,7 @@ namespace MKTFY.Models.ViewModels.User
 {
     public class UserAddVM
     {
-        [Required]
-        public string Id { get; set; }
+
 
         [Required]
         public string FirstName { get; set; }
