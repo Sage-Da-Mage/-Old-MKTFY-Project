@@ -180,6 +180,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.7.1, )"
+            },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[5.0.0, )"

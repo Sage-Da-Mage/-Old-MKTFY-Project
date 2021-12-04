@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "q3oj6qGS4+s+E1w6SQAUbPLjsA4di/fUWmMYwOXJCNsyh15Zbl3ZZkZbn7oM8rtCK+D/nOdvWmc7apb7wg2Thw==",
+  "dgSpecHash": "x6BkNPQ1AzPcAuLWFrX6UAONMni1jykSelpCsQkA3WgLiNOuTcQeU9ByPIIUiRVq6PlSvbxHFe8psLNDjp6sDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Api\\MKTFY.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\15875\\.nuget\\packages\\awssdk.core\\3.7.5.4\\awssdk.core.3.7.5.4.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\awssdk.s3\\3.7.7.1\\awssdk.s3.3.7.7.1.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.11\\microsoft.aspnetcore.authentication.jwtbearer.5.0.11.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

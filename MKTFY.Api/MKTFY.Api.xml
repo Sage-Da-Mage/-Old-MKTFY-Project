@@ -71,6 +71,17 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:MKTFY.Api.Controllers.UploadController">
+            <summary>
+            The controller for uploading images for the MKTFY Project.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UploadController.UploadImage">
+            <summary>
+            This endpoint is structured to support uploading multiple images.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:MKTFY.Api.Controllers.UserController">
             <summary>
             The controller for handling User-related endpoints

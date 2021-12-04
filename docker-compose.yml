@@ -16,7 +16,12 @@ services:
         - Auth0__Domain=https://dev-bcybq3la.us.auth0.com
         - Auth0__Audience=http://mktfy.com
         - Auth0__TokenRedirectUrl=http://localhost/redirect
+        - AWS__ImageBucket=mktfy-core
+        - AWS__Region=ca-central-1
 
+    volumes:
+        - .aws:/root/.aws
+ 
     depends_on:
         - mktfy.db
 

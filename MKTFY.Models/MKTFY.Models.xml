@@ -4,6 +4,16 @@
         <name>MKTFY.Models</name>
     </assembly>
     <members>
+        <member name="T:MKTFY.Models.Entities.Listing">
+            <summary>
+            The Listing entity used throughout the MKTFY project.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.Listing.#ctor">
+            <summary>
+            Default constructor so we can create an empty Listing Entity if needed
+            </summary>
+        </member>
         <member name="M:MKTFY.Models.Entities.Listing.#ctor(MKTFY.Models.ViewModels.Listing.ListingAddVM,System.String)">
             <summary>
             Constructor we use to create a new Listing from a ListingAddVM model
@@ -17,6 +27,101 @@
             </summary>
             <param name="src"></param>
         </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Id">
+            <summary>
+            The Guid Id used to differenciate/identify desired Listings.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.CategoryId">
+            <summary>
+            An int for identifying the category, current list in ListingAddVM.cs
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Price">
+            <summary>
+            The price of the Listing.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.DateCreated">
+            <summary>
+            The Date and time that the Listing was created. NEVER CHANGED
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.ProductName">
+            <summary>
+            The name of the product.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Description">
+            <summary>
+            A short description of the product.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Condition">
+            <summary>
+            The condition of the product. (1 of a couple options only)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Address">
+            <summary>
+            The address where the Listing is posted from.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.City">
+            <summary>
+            The city the posting is set in.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.DateSold">
+            <summary>
+            The time and date the Listing was sold, null initially but once assigned NEVER CHANGED.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.BuyerId">
+            <summary>
+            The Id of the user buying the listing.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.StatusOfTransaction">
+            <summary>
+            The Status of the transaction, starts as Listing, but changes based on events.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.UserId">
+            <summary>
+            The user who created the listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Listing.User">
+            <summary>
+            The User Class of the User who posted the Listing.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.Entities.Upload">
+            <summary>
+            Simple Entity for storing the uploaded image(s).
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Upload.Id">
+            <summary>
+            The Id used to identify/differenciate images.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Upload.Url">
+            <summary>
+            The Url we use to get the image from AWS.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.Entities.User">
+            <summary>
+            The Entity for Users and their properties.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.User.#ctor">
+            <summary>
+            The base constructor class for user.
+            </summary>
+        </member>
         <member name="M:MKTFY.Models.Entities.User.#ctor(MKTFY.Models.ViewModels.User.UserAddVM)">
             <summary>
             Create a User from an inputted source of data.
@@ -28,6 +133,414 @@
             Create A user from a UserUpdateVM
             </summary>
             <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Id">
+            <summary>
+            The Id of the User (used to diferenciate or identify users).
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.FirstName">
+            <summary>
+            The First name of the User.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.LastName">
+            <summary>
+            The last name of the User.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Email">
+            <summary>
+            The Users email. (CHECK FOR REQUIREMENTS)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Phone">
+            <summary>
+            The phone # of the user. (10 digit string of numbers)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.UserAddress">
+            <summary>
+            The adress of the user.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.City">
+            <summary>
+            The city the user resides in.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Province">
+            <summary>
+            The province the user resides in.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Country">
+            <summary>
+            The country the user resides in.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.DateCreated">
+            <summary>
+            The DateTime that this user was generated.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.FullName">
+            <summary>
+            Generate a Full name from the first and last names.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.FullAddress">
+            <summary>
+            Generate a full address from the users Address, City, Province and Country.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.User.Listings">
+            <summary>
+            Listings User Created.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Auth.AuthResponseVM">
+            <summary>
+            The View Model for Authorization done through Auth0
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Auth.AuthResponseVM.AccessToken">
+            <summary>
+            The AccessToken is what proves to Auth0 that you are a 
+            valid user, that you are authorized.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Auth.AuthResponseVM.ExpiresIn">
+            <summary>
+            ExpiresIn represents how long (in seconds) that the AccessToken will be valid for.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingAddVM">
+            <summary>
+            This View Model is for adding a listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.CategoryId">
+            <summary>
+            CategoryId: 1=Cars/Vehicles, 2=Furniture, 3=Electronics, 4=Real Estate
+            Potentially add more after talking with team
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.ProductName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.Condition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingUpdateVM">
+            <summary>
+            The difference between this and ListingAddVM file is that
+            it must contain any/only objects that can be updated. (i.e. no Created variable)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.CategoryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.ProductName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.Condition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingVM">
+            <summary>
+            This is a View Model for showing all listings or creating a new listing
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingVM.#ctor">
+            <summary>
+            The default constructor for the creation of an empty ListingVM
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingVM.#ctor(MKTFY.Models.Entities.Listing)">
+            <summary>
+            The Constructor for populating a new ListingVM from a Listing Entity
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.Id">
+            <summary>
+            The Id is the guid that is used to identify different listings in searches.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.CategoryId">
+            <summary>
+            The Category Id is a number that represents the type of product the Listing is,
+            it is a number because it is better practice for changes/modifications. 
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.Price">
+            <summary>
+            The price of the product
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.DateCreated">
+            <summary>
+            The date that the Listing was created (This is never changed/modified)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.ProductName">
+            <summary>
+            The name of the product being Listed.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.Description">
+            <summary>
+            A brief description/summary of the product.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.Condition">
+            <summary>
+            The condition of the product (should be 1 of a couple options only)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.Address">
+            <summary>
+            The address for pickup of the Listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.City">
+            <summary>
+            The city which the Listing is
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.DateSold">
+            <summary>
+            The time that the product is sold, null until this is true.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.StatusOfTransaction">
+            <summary>
+            The status of the transaction (Listing, Sold etc.)
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.UserId">
+            <summary>
+            The User Id of the person placing the listing.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Upload.UploadResultVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Upload.UploadResultVM.FileName">
+            <summary>
+             Name of the Uploaded file
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.User.UserAddVM">
+            <summary>
+            The UserAddVM class allows us to create a UserVM.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.FirstName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.Phone">
+            <summary>
+            Should be in the format of a 10 digit set of numbers
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.UserAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.Province">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserAddVM.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.User.UserUpdateVM">
+            <summary>
+            The UserUpdateVM class allows us to change the properties in User that are
+            allowed to be changed.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.UserAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.Province">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserUpdateVM.Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.User.UserVM">
+            <summary>
+            The UserVm class is for generating a View Model of the User Class.
+            It can be built from a User class.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.User.UserVM.#ctor(MKTFY.Models.Entities.User)">
+            <summary>
+            The src User passes all the information it can into the View Model
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.UserAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.Province">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.User.UserVM.Country">
+            <summary>
+            
+            </summary>
         </member>
     </members>
 </doc>

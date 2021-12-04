@@ -366,3 +366,8 @@ FodyWeavers.xsd
 ## Docker Compose
 ##
 docker-compose.override.yml
+
+##
+## AWS SDK
+##
+.aws
