@@ -22,3 +22,4 @@ C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Models\obj\De
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Models\obj\Debug\net5.0\MKTFY.Models.dll
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Models\obj\Debug\net5.0\ref\MKTFY.Models.dll
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Models\obj\Debug\net5.0\MKTFY.Models.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Models\bin\Debug\net5.0\MKTFY.Models.xml

@@ -12,8 +12,15 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Api
 {
+    /// <summary>
+    /// The program file, contains the Main method.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// The main method, runs the program.
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
 
@@ -45,6 +52,11 @@ namespace MKTFY.Api
             host.Run();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
