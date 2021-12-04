@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MKTFY.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MKTFY.Api.Controllers.AuthController">
+            <summary>
+            The controller for Authorization endpoints
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.AuthController.#ctor(MKTFY.Services.Services.Interfaces.IAuthService)">
+            <summary>
+            Set up the constructor with an IAuthService passed in
+            </summary>
+            <param name="authService"></param>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.AuthController.Token(System.String)">
+            <summary>
+            Exchange an Auth Code for an Access token
+            </summary>
+            <param name="authCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Controllers.ListingController">
+            <summary>
+            The Controller for handling Listings and related code.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.#ctor(MKTFY.Services.Services.Interfaces.IListingService)">
+            <summary>
+            The Constructor that takes in a IListingService
+            </summary>
+            <param name="listingService"></param>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.Create(MKTFY.Models.ViewModels.Listing.ListingAddVM)">
+            <summary>
+            Creates a Listing from inputed data.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.Get(System.Guid)">
+            <summary>
+            Get a Listing by it's Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.GetAll">
+            <summary>
+            Gets all Listings in the database. 
+            </summary>
+            <response code="200">Listing Found</response>
+            <response code="401">Not Currently Logged in || Auth error</response>
+            <response code="500">Internal Server Issue. E.g. connectivity, database, etc.</response>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.Update(MKTFY.Models.ViewModels.Listing.ListingUpdateVM)">
+            <summary>
+            Update a Listing using inputted data, excluding non-updatable properties
+            like id.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.Delete(System.Guid)">
+            <summary>
+            Delete a listing from the database (determined by Id).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Controllers.UserController">
+            <summary>
+            The controller for handling User-related endpoints
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UserController.#ctor(MKTFY.Services.Services.Interfaces.IUserService)">
+            <summary>
+            The Constructor that takes in a IUserService
+            </summary>
+            <param name="userService"></param>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UserController.Create(MKTFY.Models.ViewModels.User.UserAddVM)">
+            <summary>
+            The endpoint that generates a new user from passed in data
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UserController.Get(System.String)">
+            <summary>
+            The endpoint that gets a specific user by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UserController.Update(MKTFY.Models.ViewModels.User.UserUpdateVM)">
+            <summary>
+            The endpoint that updates a user.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Helpers.UserHelpers">
+            <summary>
+            Helpers for the User Entity and it's related code.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Helpers.UserHelpers.GetId(System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Get the Id of a specific entity.
+            </summary>
+            <param name="principal"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Middleware.GlobalExceptionHandler">
+            <summary>
+            The handler for global Exceptions
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:MKTFY.Api.Middleware.GlobalExceptionHandler.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Program">
+            <summary>
+            The program file, contains the Main method.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Program.Main(System.String[])">
+            <summary>
+            The main method, runs the program.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MKTFY.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MKTFY.Api.Startup">
+            <summary>
+            The startup file
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            The constructor that takes in an IConfiguration as input
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MKTFY.Api.Startup.Configuration">
+            <summary>
+            Get the Iconfiguration
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Startup.ConfigureDependencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adding depenency injection to the startup file
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MKTFY.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MKTFY.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:MKTFY.Api.Swashbuckle.AuthHeaderOperationFilter">
+            <summary>
+            A Swashbuckle Auth header filter tool/extension
+            </summary>
+        </member>
+        <member name="M:MKTFY.Api.Swashbuckle.AuthHeaderOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            The mechanics of the Auth header filtering
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+    </members>
+</doc>

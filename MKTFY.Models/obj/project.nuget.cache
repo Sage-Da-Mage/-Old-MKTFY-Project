@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Uv3TWEoHKouIRN/cwqSzjzwGTW4LAUsA84Gl7PMH1COqwUoJTQrxtPJwovNcTjNL/mSOoFqu6ocCozvkOc179g==",
+  "dgSpecHash": "JFQ4iqjmaOePy09ANv9BaoXJAsAtk1yb6b5ZgXS9/TT/4HrvRoejQrGY42Y7svaNiz0RblIbWNRBqJfbgvSYyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Models\\MKTFY.Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\15875\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
   "logs": []
 }

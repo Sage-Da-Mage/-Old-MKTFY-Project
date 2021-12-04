@@ -104,3 +104,5 @@ C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\obj\Debug
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\obj\Debug\net5.0\MKTFY.Api.pdb
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\obj\Debug\net5.0\MKTFY.Api.genruntimeconfig.cache
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\obj\Debug\net5.0\MKTFY.Api.csproj.CopyComplete
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\bin\Debug\net5.0\MKTFY.Api.xml
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Api\bin\Debug\net5.0\MKTFY.Models.xml
