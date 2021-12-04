@@ -328,6 +328,31 @@
           "MKTFY.Api.dll": {}
         }
       },
+      "AWSSDK.Core/3.7.5.4": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.5.4"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.S3/3.7.7.1": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.5.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.7.1"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -693,6 +718,7 @@
       },
       "MKTFY.Services/1.0.0": {
         "dependencies": {
+          "AWSSDK.S3": "3.7.7.1",
           "MKTFY.Models": "1.0.0",
           "MKTFY.Repositories": "1.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0"
@@ -2405,6 +2431,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.7.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uuHIEDIYhJVUVKM/IoHXkyvZ3tJPUUCXIWLN4NhfkE0f2d8cGVRK2wLH28PCpaMM74tNQGcnAEFx45mr9asxjw==",
+      "path": "awssdk.core/3.7.5.4",
+      "hashPath": "awssdk.core.3.7.5.4.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y98ORG3+QqPhVEEMJCzfR5a2f8RuyoBm5zbGFox83qbqM0GJeM1a1x854UnKoN57SovHFvnqU1b+/ZemRtrC6g==",
+      "path": "awssdk.s3/3.7.7.1",
+      "hashPath": "awssdk.s3.3.7.7.1.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
