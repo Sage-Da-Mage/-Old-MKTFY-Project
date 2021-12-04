@@ -37,5 +37,8 @@ namespace MKTFY.Models.ViewModels.Listing
         [Required]
         public string City { get; set; }
 
+        [Required]
+        public string UserId { get; set; }
+
     }
 }
