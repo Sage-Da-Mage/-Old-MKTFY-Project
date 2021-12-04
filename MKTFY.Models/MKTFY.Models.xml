@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MKTFY.Models</name>
+    </assembly>
+    <members>
+        <member name="M:MKTFY.Models.Entities.Listing.#ctor(MKTFY.Models.ViewModels.Listing.ListingAddVM,System.String)">
+            <summary>
+            Constructor we use to create a new Listing from a ListingAddVM model
+            </summary>
+            <param name="src"></param>
+            <param name="userId"></param>
+        </member>
+        <member name="M:MKTFY.Models.Entities.Listing.#ctor(MKTFY.Models.ViewModels.Listing.ListingUpdateVM)">
+            <summary>
+             A Constructor we use to update an existing Listing from a ListingUpdateVM model
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="M:MKTFY.Models.Entities.User.#ctor(MKTFY.Models.ViewModels.User.UserAddVM)">
+            <summary>
+            Create a User from an inputted source of data.
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="M:MKTFY.Models.Entities.User.#ctor(MKTFY.Models.ViewModels.User.UserUpdateVM)">
+            <summary>
+            Create A user from a UserUpdateVM
+            </summary>
+            <param name="src"></param>
+        </member>
+    </members>
+</doc>

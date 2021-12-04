@@ -15,7 +15,11 @@ namespace MKTFY.Models.Entities
         {
         }
 
-        // Constructor we use to create a new Listing from a ListingAddVM model
+        /// <summary>
+        /// Constructor we use to create a new Listing from a ListingAddVM model
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="userId"></param>
         public Listing(ListingAddVM src, string userId)
         {
             CategoryId = src.CategoryId;
@@ -29,7 +33,10 @@ namespace MKTFY.Models.Entities
 
         }
 
-        // A Constructor we use to update an existing Listing from a ListingUpdateVM model
+        /// <summary>
+        ///  A Constructor we use to update an existing Listing from a ListingUpdateVM model
+        /// </summary>
+        /// <param name="src"></param>
         public Listing(ListingUpdateVM src)
         {
             Id = src.Id;

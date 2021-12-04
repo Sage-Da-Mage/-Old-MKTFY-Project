@@ -9,18 +9,30 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Api.Controllers
 {
+    /// <summary>
+    /// The controller for Authorization endpoints
+    /// </summary>
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
 
+        /// <summary>
+        /// Set up the constructor with an IAuthService passed in
+        /// </summary>
+        /// <param name="authService"></param>
         public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
 
-        // Exchange an Auth Code for an Access token
+        /// <summary>
+        /// Exchange an Auth Code for an Access token
+        /// </summary>
+        /// <param name="authCode"></param>
+        /// <returns></returns>
         [HttpPost("token")]
         public async Task<ActionResult<AuthResponseVM>> Token([FromQuery] string authCode)
         {

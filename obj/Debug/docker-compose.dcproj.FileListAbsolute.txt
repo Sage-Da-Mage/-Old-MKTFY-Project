@@ -72,3 +72,5 @@ C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Mod
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Api.xml
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\bin\Debug\MKTFY.Models.xml

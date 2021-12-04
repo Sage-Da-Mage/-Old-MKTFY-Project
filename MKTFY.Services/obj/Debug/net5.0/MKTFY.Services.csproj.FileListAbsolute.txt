@@ -36,3 +36,4 @@ C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Services\obj\
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.dll
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Services\obj\Debug\net5.0\ref\MKTFY.Services.dll
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Services\obj\Debug\net5.0\MKTFY.Services.pdb
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Services\bin\Debug\net5.0\MKTFY.Models.xml
