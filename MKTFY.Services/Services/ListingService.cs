@@ -24,8 +24,9 @@ namespace MKTFY.Services.Services
             //Create the new Listing entity
             var newEntity = new Listing(src, userId);
 
-            // Add a default StatusOfTransaction
+            // Add a default StatusOfTransaction and set DateSold to null
             newEntity.StatusOfTransaction = "Listed";
+            newEntity.DateSold = null;
 
             // Have the repository create the new listing
             var result = await _listingRepository.Create(newEntity);

@@ -29,7 +29,8 @@ namespace MKTFY.Models.ViewModels.Listing
             Address = src.Address;
             City = src.City;
             UserId = src.UserId;
-            UserName = src.User?.FullName;
+            StatusOfTransaction = src.StatusOfTransaction;
+            DateSold = src.DateSold;
 
         }
 
@@ -53,13 +54,11 @@ namespace MKTFY.Models.ViewModels.Listing
 
         public string City { get; set; }
 
-        public DateTime DateSold { get; set; }
+        public DateTime? DateSold { get; set; }
 
         public string StatusOfTransaction { get; set; }
 
         public string UserId { get; set; }
-
-        public string UserName { get; set; }
     //}
     }
 }

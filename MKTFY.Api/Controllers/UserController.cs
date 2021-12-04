@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MKTFY.Api.Helpers;
 using MKTFY.Models.ViewModels.User;
 using MKTFY.Services.Services.Interfaces;
 using System;
@@ -26,8 +27,10 @@ namespace MKTFY.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<UserVM>> Create([FromBody] UserAddVM data)
         {
+            var userId = User.GetId();
+
             // Have the service create the new user
-            var result = await _userService.Create(data);
+            var result = await _userService.Create(data, userId);
 
             // Return a 200 response with the UserVM
             return Ok(result);
