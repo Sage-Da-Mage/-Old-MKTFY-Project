@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Models.Entities
 {
+    /// <summary>
+    /// The Entity for Users and their properties.
+    /// </summary>
     public class User
     {
+        /// <summary>
+        /// The base constructor class for user.
+        /// </summary>
         public User() { }
 
         /// <summary>
@@ -46,40 +52,71 @@ namespace MKTFY.Models.Entities
             Country = src.Country;
         }
 
+        /// <summary>
+        /// The Id of the User (used to diferenciate or identify users).
+        /// </summary>
         [Required]
         [Key]
         public string Id { get; set; }
 
+        /// <summary>
+        /// The First name of the User.
+        /// </summary>
         [Required]
         public string FirstName { get; set; }
 
+        /// <summary>
+        /// The last name of the User.
+        /// </summary>
         [Required]
         public string LastName { get; set; }
 
+        /// <summary>
+        /// The Users email. (CHECK FOR REQUIREMENTS)
+        /// </summary>
         [Required]
         public string Email { get; set; }
 
+        /// <summary>
+        /// The phone # of the user. (10 digit string of numbers)
+        /// </summary>
         [Required]
         public string Phone { get; set; }
 
+        /// <summary>
+        /// The adress of the user.
+        /// </summary>
         [Required]
         public string UserAddress { get; set; }
 
+        /// <summary>
+        /// The city the user resides in.
+        /// </summary>
         [Required]
         public string City { get; set; }
 
+        /// <summary>
+        /// The province the user resides in.
+        /// </summary>
         [Required]
         public string Province { get; set; }
 
+        /// <summary>
+        /// The country the user resides in.
+        /// </summary>
         [Required]
         public string Country { get; set; }
 
 
-        // Check if I need a datecreated for a user
+        /// <summary>
+        /// The DateTime that this user was generated.
+        /// </summary>
         [Required]
         public DateTime DateCreated { get; set; }
 
-        // Generate a full name from the first and last name
+        /// <summary>
+        /// Generate a Full name from the first and last names.
+        /// </summary>
         [NotMapped]
         public string FullName
         {
@@ -89,6 +126,9 @@ namespace MKTFY.Models.Entities
             }
         }
 
+        /// <summary>
+        /// Generate a full address from the users Address, City, Province and Country.
+        /// </summary>
         [NotMapped]
         public string FullAddress
         {
@@ -98,7 +138,9 @@ namespace MKTFY.Models.Entities
             }
         }
 
-        // Listings user created
+        /// <summary>
+        /// Listings User Created.
+        /// </summary>
         public ICollection<Listing> Listings { get; set; }
     }
 }
