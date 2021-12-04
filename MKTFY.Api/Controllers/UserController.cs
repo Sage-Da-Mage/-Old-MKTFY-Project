@@ -12,18 +12,30 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Api.Controllers
 {
+    /// <summary>
+    /// The controller for handling User-related endpoints
+    /// </summary>
+
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
 
+        /// <summary>
+        /// The Constructor that takes in a IUserService
+        /// </summary>
+        /// <param name="userService"></param>
         public UserController(IUserService userService)
         {
             _userService = userService;
         }
 
-        // Create a new user
+        /// <summary>
+        /// The endpoint that generates a new user from passed in data
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<UserVM>> Create([FromBody] UserAddVM data)
         {
@@ -36,7 +48,11 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-        // Get a specific user by Id
+        /// <summary>
+        /// The endpoint that gets a specific user by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<UserVM>> Get([FromRoute] string id)
         {
@@ -47,7 +63,11 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-        // Update a user
+        /// <summary>
+        /// The endpoint that updates a user.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPut]
         public async Task<ActionResult<UserVM>> Update([FromBody] UserUpdateVM data)
         {

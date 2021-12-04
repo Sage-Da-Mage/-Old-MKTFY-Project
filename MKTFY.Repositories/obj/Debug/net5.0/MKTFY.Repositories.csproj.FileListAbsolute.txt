@@ -37,3 +37,4 @@ C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Repositories\
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Repositories\obj\Debug\net5.0\ref\MKTFY.Repositories.dll
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.pdb
 C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Repositories\obj\Debug\net5.0\MKTFY.Repositories.genruntimeconfig.cache
+C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\MKTFY.Repositories\bin\Debug\net5.0\MKTFY.Models.xml

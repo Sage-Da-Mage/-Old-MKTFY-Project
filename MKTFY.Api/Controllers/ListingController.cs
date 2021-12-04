@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Api.Controllers
 {
+    /// <summary>
+    /// The Controller for handling Listings and related code.
+    /// </summary>
+
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
@@ -19,12 +23,22 @@ namespace MKTFY.Api.Controllers
     {
         // Set up dependency injection for IListingService
         private readonly IListingService _listingService;
+        
+        /// <summary>
+        /// The Constructor that takes in a IListingService
+        /// </summary>
+        /// <param name="listingService"></param>
         public ListingController(IListingService listingService)
         {
             _listingService = listingService;
         }
 
-        // Create a new Listing
+
+        /// <summary>
+        /// Creates a Listing from inputed data.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<ListingVM>> Create([FromBody] ListingAddVM data)
         {
@@ -39,7 +53,11 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-        // Get a specific Listing by its Id
+        /// <summary>
+        /// Get a Listing by it's Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<ListingVM>> Get([FromRoute] Guid id)
         {
@@ -50,7 +68,13 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-        // Get all Listings
+        /// <summary>
+        /// Gets all Listings in the database. 
+        /// </summary>
+        /// <response code="200">Listing Found</response>
+        /// <response code="401">Not Currently Logged in || Auth error</response>
+        /// <response code="500">Internal Server Issue. E.g. connectivity, database, etc.</response>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<List<ListingVM>>> GetAll()
         {
@@ -61,7 +85,12 @@ namespace MKTFY.Api.Controllers
             return Ok(results);
         }
 
-        // Update a Listing
+        /// <summary>
+        /// Update a Listing using inputted data, excluding non-updatable properties
+        /// like id.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPut]
         public async Task<ActionResult<ListingVM>> Update([FromBody] ListingUpdateVM data)
         {
@@ -72,7 +101,11 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-        // Delete a Listing
+        /// <summary>
+        /// Delete a listing from the database (determined by Id).
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete([FromRoute] Guid id)
         {

@@ -13,6 +13,10 @@ namespace MKTFY.Models.Entities
     {
         public User() { }
 
+        /// <summary>
+        /// Create a User from an inputted source of data.
+        /// </summary>
+        /// <param name="src"></param>
         public User(UserAddVM src)
         {  
             FirstName = src.FirstName;
@@ -26,6 +30,10 @@ namespace MKTFY.Models.Entities
 
         }
 
+        /// <summary>
+        /// Create A user from a UserUpdateVM
+        /// </summary>
+        /// <param name="src"></param>
         public User(UserUpdateVM src)
         {
             Id = src.Id;
