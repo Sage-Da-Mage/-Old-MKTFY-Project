@@ -15,13 +15,13 @@ using MKTFY.Repositories.Repositories.Interfaces;
 
 namespace MKTFY.Services.Services.Interfaces
 {
-    class UploadService : IUploadService
+    public class UploadService : IUploadService
     {
 
         private readonly IConfiguration _config;
         private readonly IUploadRepository _uploadRepository;
 
-        public UploadService(IConfiguration config, UploadRepository uploadRepository)
+        public UploadService(IConfiguration config, IUploadRepository uploadRepository)
         {
             _config = config;
             _uploadRepository = uploadRepository;
