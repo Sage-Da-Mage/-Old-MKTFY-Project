@@ -8,6 +8,8 @@ services:
         condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      AWS__ImageBucket: mktfy-bucket
+      AWS__Region: ca-central-1
       Auth0__Audience: http://mktfy.com
       Auth0__ClientId: GAkPdd0zKdlWxpbExWhNlVCet0yV0ACT
       Auth0__ClientSecret: Bo63l-qO6bYLl3J-w9EjmeU3GM0KbrBJ2zvAyJsZ5GCeVZS38irzWsUKOj22nKiA
@@ -21,6 +23,8 @@ services:
       target: 80
     - published: 34001
       target: 443
+    volumes:
+    - C:\Users\15875\Desktop\LaunchPad\MKTFY project\MKTFY PROJECT\.aws:/root/.aws:rw
   mktfy.db:
     container_name: mktfy.db
     environment:

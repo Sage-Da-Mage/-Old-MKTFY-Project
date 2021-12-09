@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CB0RmyM10XkIAOL9Ps+jUSj/6mAnEza1VTUdsiSiz3A6MqcdUneQ4rjqDxyXINrhT0+XPMx61z6AIRIl7D+H+w==",
+  "dgSpecHash": "tLOQziltbm4XD/rtRpduTubZk35CbyvHK3KusLMlNbtCmAdZYEYHFRaNB6oW27d6qjmk625LarmWjv21iA/Img==",
   "success": true,
   "projectFilePath": "C:\\Users\\15875\\Desktop\\LaunchPad\\MKTFY project\\MKTFY PROJECT\\MKTFY.Services\\MKTFY.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\15875\\.nuget\\packages\\awssdk.core\\3.7.5.4\\awssdk.core.3.7.5.4.nupkg.sha512",
+    "C:\\Users\\15875\\.nuget\\packages\\awssdk.s3\\3.7.7.1\\awssdk.s3.3.7.7.1.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\15875\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.10\\microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",

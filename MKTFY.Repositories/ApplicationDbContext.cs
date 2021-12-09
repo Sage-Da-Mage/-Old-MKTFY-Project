@@ -22,6 +22,8 @@ namespace MKTFY.Repositories
         }
 
         public DbSet<Listing> Listings { get; set; }
-        public DbSet<User> Users { get; set; } 
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Upload> Uploads { get; set; }
     }
 }
