@@ -40,6 +40,8 @@ namespace MKTFY.Repositories.Repositories.Interfaces
         // Get the list of Listings that the user has posted
         Task<List<Listing>> GetMyListings(string userId, string status);
 
+        Task<Listing> GetListingWithSeller(Guid id); // Get a Listing and the Sellers information
+
         /// <summary>
         /// Change the Transaction status of the listing.
         /// </summary>

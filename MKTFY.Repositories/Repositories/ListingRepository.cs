@@ -211,6 +211,17 @@ namespace MKTFY.Repositories.Repositories
             return results;
         }
 
+        public async Task<Listing> GetListingWithSeller(Guid id)
+        {
+            var result = await _context.Listings
+                .Include(u => u.ListingUploads).ThenInclude(u => u.Upload)
+                .Include(u => u.User)
+                .FirstOrDefaultAsync(i => i.Id == id);
+            if (result == null) throw new NotFoundException("The requested listing could not be found");
+            return result;
+        }
+
+
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
             // Get the listing requested and throw an exception if you can't find it.

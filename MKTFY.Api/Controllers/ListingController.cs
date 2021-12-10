@@ -224,7 +224,17 @@ namespace MKTFY.Api.Controllers
             
             // Return the list of Listings the user has posted
             return Ok(results);
+        }
 
+        /// <summary>
+        /// Get a listing with the details of the seller and the number of listings they have
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("listing/{id}/seller")]
+        public async Task<ActionResult<ListingsPlusSellerVM>> GetListingWithSeller([FromRoute] Guid id)
+        {
+            return Ok(await _listingService.GetListingWithSeller(id));
         }
 
 

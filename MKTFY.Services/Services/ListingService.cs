@@ -158,6 +158,15 @@ namespace MKTFY.Services.Services
             return models;
         }
 
+        public async Task<ListingsPlusSellerVM> GetListingWithSeller(Guid id)
+        {
+            var result = await _listingRepository.GetListingWithSeller(id);
+            var sellerListings = await _listingRepository.GetMyListings(result.UserId, "listed");
+            int sellerListingCount = sellerListings.Count;
+            var model = new ListingsPlusSellerVM(result, sellerListingCount);
+            return model;
+        }
+
 
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
