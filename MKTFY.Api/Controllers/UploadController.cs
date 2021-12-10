@@ -46,7 +46,11 @@ namespace MKTFY.Api.Controllers
                 return BadRequest(new { message = "At least one uploaded file is not a valid image type"});
 
             // Validate a file size so we don't recieve files greater thatn 15000000 bytes.
-
+            int maxAllowedFileSize = 15000000;
+            var uploadedFileSizes = Request.Form.Files.Select(i => i.Length);
+            var exceedsFileSize = uploadedFileSizes.Any(i => i > maxAllowedFileSize);
+            if (exceedsFileSize)
+                return BadRequest(new { message = $"At least one of the uploaded file(s) exceed the max file size of {maxAllowedFileSize / 1000} KB " });
 
 
             var results = await _uploadService.UploadFiles(Request.Form.Files.ToList());
