@@ -37,6 +37,7 @@ namespace MKTFY.Models.ViewModels.Listing
             UserId = src.UserId;
             StatusOfTransaction = src.StatusOfTransaction;
             DateSold = src.DateSold;
+            //UploadIds src.UploadIds;
 
         }
 
@@ -101,6 +102,11 @@ namespace MKTFY.Models.ViewModels.Listing
         /// <summary>
         /// The User Id of the person placing the listing.
         /// </summary>
+        /// 
+        
+        
+        //public ICollection<Upload> UploadIds{ get; set; }
+
         public string UserId { get; set; }
     }
 }

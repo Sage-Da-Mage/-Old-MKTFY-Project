@@ -1,5 +1,7 @@
 ﻿using MKTFY.Models.Entities;
+using MKTFY.Models.ViewModels;
 using MKTFY.Models.ViewModels.Listing;
+using MKTFY.Repositories.Repositories;
 using MKTFY.Repositories.Repositories.Interfaces;
 using MKTFY.Services.Services.Interfaces;
 using System;
@@ -13,10 +15,14 @@ namespace MKTFY.Services.Services
     public class ListingService : IListingService
     {
         private readonly IListingRepository _listingRepository;
+        private readonly ISearchRepository _searchRepository;
+        private readonly IUploadRepository _uploadRepository;
 
-        public ListingService(IListingRepository listingRepository)
+        public ListingService(IListingRepository listingRepository, ISearchRepository searchRepository, IUploadRepository uploadRepository)
         {
             _listingRepository = listingRepository;
+            _searchRepository = searchRepository;
+            _uploadRepository = uploadRepository;
         }
 
         public async Task<ListingVM> Create(ListingAddVM src, string userId)
@@ -33,6 +39,10 @@ namespace MKTFY.Services.Services
 
             // Create the ListingVM we want to return to the client
             var model = new ListingVM(result);
+
+
+            // Remember to get the url collection
+
 
             // Return a ListingVM for client
             return model;
@@ -81,6 +91,44 @@ namespace MKTFY.Services.Services
             await _listingRepository.Delete(id);
         }
 
+        public async Task<List<ListingVM>> GetByCategory(int categoryId, string region)
+        {
+            var results = await _listingRepository.GetByCategory(categoryId, region);
+            var models = results.Select(listing => new ListingVM(listing)).ToList();
+            return models;
+        }
+
+        /*public async Task<List<ListingVM>> GetDeals(string userId, string region)
+        {
+            //retrieve user's last 3 search terms
+            var searchHistory = await _searchRepository.GetLatestSearches(userId);
+
+            //find listings matching search terms
+            var dealListings = new List<Listing>();
+            foreach (SearchHistory search in searchHistory)
+            {
+                var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, region);
+                dealListings.AddRange(dealResults);
+            }
+            var distinctListings = dealListings.Distinct();
+            var models = distinctListings.Select(listing => new ListingVM(listing)).ToList();
+            return models;
+        }*/
+
+        public async Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string region)
+        {
+            //save search term to SearchItem Table
+            var newSearchEntity = new SearchItem(src);
+            newSearchEntity.DateCreated = DateTime.UtcNow;
+            await _searchRepository.Save(newSearchEntity);
+
+            //get search
+            var results = await _listingRepository.GetBySearchTerm(src.SearchTerm, region);
+            var models = results.Select(listing => new ListingVM(listing)).ToList();
+            return models;
+        }
+
+
         public async Task<ListingSellerVM> GetPickupInfo(Guid id)
         {
 
@@ -91,6 +139,27 @@ namespace MKTFY.Services.Services
             return model;
 
         }
+
+        public async Task ChangeTransactionStatus(Guid id, string status)
+        {
+            await _listingRepository.ChangeTransactionStatus(id, status);
+        }
+
+        /*private async Task<ListingVM> AddUploadDetails(Listing result)
+        {
+            var model = new ListingVM(result);
+            //get the Upload Id
+            var uploadIds = result.ListingUploads.Select(i => i.UploadId).ToList();
+            //get the Upload Url
+            foreach (Guid uploadId in uploadIds)
+            {
+                var upload = await UploadRepository.Get(uploadId);
+                //model.UploadUrls.Add(upload.Url);
+            }
+            //model.UploadIds = uploadIds;
+
+            return model;
+        }*/
 
 
     }

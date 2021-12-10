@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MKTFY.Api.Helpers;
+using MKTFY.Models.ViewModels;
 using MKTFY.Models.ViewModels.Listing;
 using MKTFY.Services.Services.Interfaces;
 using System;
@@ -117,6 +118,39 @@ namespace MKTFY.Api.Controllers
         }
     
         /// <summary>
+        /// Get a series of listings from the category type(CategoryId).
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <param name="city"></param>
+        /// <returns></returns>
+        [HttpGet("category/{categoryId")]
+        public async Task<ActionResult<List<ListingVM>>> GetByCategory([FromRoute]int categoryId, string city)
+        {
+            var result = await _listingService.GetByCategory(categoryId, city);
+            return Ok(result);
+
+        }
+
+        // CREATE A GETDEALS ENDPOINT HERE!!!
+
+
+        /// <summary>
+        /// Get a series of listings from an inputted string of terms.
+        /// </summary>
+        /// <param name="searchTerm"></param>
+        /// <param name="region"></param>
+        /// <returns></returns>
+        [HttpGet("search")]
+        public async Task<ActionResult<List<ListingVM>>> GetBySearchTerm(string searchTerm, string city)
+        {
+            var search = new SearchCreateVM();
+            search.UserId = User.GetId();
+            search.SearchTerm = searchTerm.ToLower();
+            var result = await _listingService.GetBySearchTerm(search, city);
+            return Ok(result);
+        }
+
+        /// <summary>
         /// The endpoint for getting the information on where to pick up a listing once purchaced.
         /// </summary>
         /// <param name="id"></param>
@@ -127,6 +161,20 @@ namespace MKTFY.Api.Controllers
             var result = await _listingService.GetPickupInfo(id);
 
             return Ok(result);
+        }
+
+
+        /// <summary>
+        /// The endpoint for changing the transaction status of a listing.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        [HttpPut("{id}/{status")]
+        public async Task<ActionResult> ChangeTransactionStatus([FromRoute]Guid id, string status)
+        {
+            await _listingService.ChangeTransactionStatus(id, status);
+            return Ok();
         }
 
     }

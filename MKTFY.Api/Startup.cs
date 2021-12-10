@@ -55,9 +55,12 @@ namespace MKTFY.Api
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUploadService, UploadService>();
+
             services.AddScoped<IListingRepository, ListingRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUploadRepository, UploadRepository>();
+            services.AddScoped<ISearchRepository, SearchRepository>();
+
         }
 
 

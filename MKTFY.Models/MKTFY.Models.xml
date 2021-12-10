@@ -4,6 +4,24 @@
         <name>MKTFY.Models</name>
     </assembly>
     <members>
+        <member name="T:MKTFY.Models.Entities.Category">
+            <summary>
+            The Category class holds both the number representing the category type
+            and the corresponding name.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Category.Id">
+            <summary>
+            The Category Id number, listed below:
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.Category.Name">
+            <summary>
+            The name of the Category type:
+            CategoryId: 1=Cars/Vehicles, 2=Furniture, 3=Electronics, 4=Real Estate
+            Potentially add more after talking with team
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.Entities.FAQ">
             <summary>
             The Entity for FAQs, used to hold all the properties used for FAQs.
@@ -79,6 +97,11 @@
             An int for identifying the category, current list in ListingAddVM.cs
             </summary>
         </member>
+        <member name="P:MKTFY.Models.Entities.Listing.Category">
+            <summary>
+            The Catagory belonging to the CatagoryId
+            </summary>
+        </member>
         <member name="P:MKTFY.Models.Entities.Listing.Price">
             <summary>
             The price of the Listing.
@@ -129,6 +152,11 @@
             The Status of the transaction, starts as Listing, but changes based on events.
             </summary>
         </member>
+        <member name="P:MKTFY.Models.Entities.Listing.ListingUploads">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:MKTFY.Models.Entities.Listing.UserId">
             <summary>
             The user who created the listing
@@ -138,6 +166,52 @@
             <summary>
             The User Class of the User who posted the Listing.
             </summary>
+        </member>
+        <member name="T:MKTFY.Models.Entities.ListingUpload">
+            <summary>
+            An entity for holding the Id of the Lising and the Id of the Upload.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.ListingUpload.ListingId">
+            <summary>
+            The Listing Id that the upload is connected to.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.ListingUpload.UploadId">
+            <summary>
+            The Upload Id that is connected to the Listing.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.Entities.SearchItem">
+            <summary>
+            The entity that represents a search done on the site
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.SearchItem.#ctor">
+            <summary>
+            The empty SearchItem constructor
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.SearchItem.#ctor(MKTFY.Models.ViewModels.SearchCreateVM)">
+            <summary>
+            The SearchItem constructor that takes in a SearchCreateVM
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.Entities.SearchItem.Id">
+            The Id of the search
+        </member>
+        <member name="P:MKTFY.Models.Entities.SearchItem.SearchTerm">
+            The term that was searched
+        </member>
+        <member name="P:MKTFY.Models.Entities.SearchItem.DateCreated">
+            The DateTime of the time the search was done
+        </member>
+        <member name="P:MKTFY.Models.Entities.SearchItem.UserId">
+            This is the Id of the user making the search
+        </member>
+        <member name="P:MKTFY.Models.Entities.SearchItem.User">
+            User User allows us to access the User details
         </member>
         <member name="T:MKTFY.Models.Entities.Upload">
             <summary>
@@ -364,6 +438,11 @@
             
             </summary>
         </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.UploadIds">
+            <summary>
+            The Id of an upload.
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.ViewModels.Listing.ListingSellerVM">
             <summary>
             The View Model Class used for the seller of a Listing.
@@ -437,6 +516,11 @@
             </summary>
         </member>
         <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingUpdateVM.ListingUploads">
             <summary>
             
             </summary>
@@ -521,6 +605,22 @@
         <member name="P:MKTFY.Models.ViewModels.Listing.ListingVM.UserId">
             <summary>
             The User Id of the person placing the listing.
+            </summary>
+            
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.SearchCreateVM">
+            <summary>
+            The VM that creates SearchItems.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.SearchCreateVM.UserId">
+            <summary>
+            The Id of the user who did the search.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.SearchCreateVM.SearchTerm">
+            <summary>
+            The term that was searched.
             </summary>
         </member>
         <member name="T:MKTFY.Models.ViewModels.Upload.UploadResultVM">

@@ -1,4 +1,6 @@
-﻿using MKTFY.Models.ViewModels.Listing;
+﻿using MKTFY.Models.Entities;
+using MKTFY.Models.ViewModels;
+using MKTFY.Models.ViewModels.Listing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +26,19 @@ namespace MKTFY.Services.Services.Interfaces
         // Delete a Listing
         Task Delete(Guid id);
 
+        // Get a series of listings by an inputted Category
+        Task<List<ListingVM>> GetByCategory(int categoryId, string region);
+
+
         // Get the pickup info for a listing
         Task<ListingSellerVM> GetPickupInfo(Guid id);
+
+        // Get a series of lisitings by an inputted string of terms.
+        Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string region);
+
+
+        // Change the StatusOfTransaction to an inputted string.
+        Task ChangeTransactionStatus(Guid id, string status);
+
     }
 }

@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MKTFY.Models.Entities;
+using MKTFY.Models.ViewModels.Upload;
 
 namespace MKTFY.Models.ViewModels.Listing
 {
@@ -54,6 +56,10 @@ namespace MKTFY.Models.ViewModels.Listing
         /// </summary>
         public string City { get; set; }
 
+        /// <summary>
+        /// The Id of an upload.
+        /// </summary>
+        public List<Guid> UploadIds { get; set; }
 
     }
 }

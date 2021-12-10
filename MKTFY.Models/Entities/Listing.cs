@@ -35,6 +35,7 @@ namespace MKTFY.Models.Entities
             Address = src.Address;
             City = src.City;
             UserId = userId;
+            ListingUploads = src.UploadIds.Select(id => new ListingUpload { UploadId = id }).ToList();
 
         }
 
@@ -68,8 +69,10 @@ namespace MKTFY.Models.Entities
         [Required]
         public int CategoryId { get; set; }
         
-        // DETERMINE IF I NEED TO ADD A CATEGORY CLASS TO THE PROJECT
-        //public Category Category { get; set; }
+        /// <summary>
+        /// The Catagory belonging to the CatagoryId
+        /// </summary>
+        public Category Category { get; set; }
 
         /// <summary>
         /// The price of the Listing.
@@ -127,6 +130,10 @@ namespace MKTFY.Models.Entities
         [Required]
         public string StatusOfTransaction { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public ICollection<ListingUpload> ListingUploads { get; set; }
 
         /// <summary>
         /// The user who created the listing

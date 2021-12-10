@@ -27,6 +27,7 @@ namespace MKTFY.Repositories.Repositories
         {
             // Add and save changes made to the database
             src.DateCreated = DateTime.UtcNow;
+
             _context.Listings.Add(src);                     // Preform the add in the memory
             await _context.SaveChangesAsync();              // Save the changes to the database
 
@@ -42,6 +43,9 @@ namespace MKTFY.Repositories.Repositories
             var result = await _context.Listings.Include(listing => listing.User).FirstOrDefaultAsync(i => i.Id == id);
             if (result == null)
                 throw new NotFoundException("The requested listing could not be found");
+
+
+
 
             // return the retrieved entry
             return result;
@@ -76,6 +80,7 @@ namespace MKTFY.Repositories.Repositories
             result.Condition = src.Condition;
             result.Address = src.Address;
             result.City = src.City;
+            //result.UploadId = src.UploadId;
 
             // Save the updates to the database
             await _context.SaveChangesAsync();
@@ -110,11 +115,29 @@ namespace MKTFY.Repositories.Repositories
 
         // ADD THE METHODS BELOW:
 
-        // GetbyCategory (int category Id, string City, string userId){
-        //}
+        public async Task<List<Listing>> GetByCategory(int categoryId, string region)
+        {
+            var results = await _context.Listings
+                .Where(listing => listing.CategoryId == categoryId &&
+                    listing.City == region &&
+                    listing.StatusOfTransaction == "Listed")
+                .Include(e => e.ListingUploads).ThenInclude(e => e.UploadId)
+                .ToListAsync();
+            return results;
+        }
 
-        // GetBySearchTerm(string searchTermLowerCase, string City, string userId){
-        //}
+        public async Task<List<Listing>> GetBySearchTerm(string searchTermLowerCase, string region)
+        {
+            var results = await _context.Listings
+                .Where(listing => listing.City == region
+                    && listing.StatusOfTransaction == "listed" &&
+                   (listing.Description.ToLower().Contains(searchTermLowerCase) ||
+                    listing.ProductName.ToLower().Contains(searchTermLowerCase) ||
+                    (listing.Category.Name.ToLower().Contains(searchTermLowerCase))))
+                .Include(e => e.ListingUploads).ThenInclude(e => e.UploadId)
+                .ToListAsync();
+            return results;
+        }
 
         // GetPickupInfo(Guid id){
         // }
@@ -122,7 +145,15 @@ namespace MKTFY.Repositories.Repositories
         // GetMyPurchases(string buyerId){
         // }
 
-        // ChangeTransactionStatus(Guid id, string status, string buyerId){
-        // }
+        public async Task ChangeTransactionStatus(Guid id, string status)
+        {
+            var result = await _context.Listings
+                .Include(e => e.User)
+                .FirstOrDefaultAsync(i => i.Id == id);
+            if (result == null) throw new NotFoundException("The requested listing could not be found");
+            result.StatusOfTransaction = status;
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

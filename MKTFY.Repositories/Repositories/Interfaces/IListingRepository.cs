@@ -30,11 +30,11 @@ namespace MKTFY.Repositories.Repositories.Interfaces
 
         // ADD THE METHODS BELOW (after adding them to ListingRepository.cs):
 
-        // GetbyCategory (int category Id, string City, string userId){
-        //}
+        Task<List<Listing>> GetByCategory(int categoryId, string City);
 
-        // GetBySearchTerm(string searchTermLowerCase, string City, string userId){
-        //}
+
+        Task<List<Listing>> GetBySearchTerm(string searchTerm, string region);
+
 
         // GetPickupInfo(Guid id){
         // }
@@ -42,9 +42,13 @@ namespace MKTFY.Repositories.Repositories.Interfaces
         // GetMyPurchases(string buyerId){
         // }
 
-        // ChangeTransactionStatus(Guid id, string status, string buyerId){
-        // }
-
+        /// <summary>
+        /// Change the Transaction status of the listing.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        Task ChangeTransactionStatus(Guid id, string status); //Change Transaction Status to Pending
 
     }
 }
