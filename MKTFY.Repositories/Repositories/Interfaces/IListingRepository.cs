@@ -48,7 +48,7 @@ namespace MKTFY.Repositories.Repositories.Interfaces
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <returns></returns>
-        Task ChangeTransactionStatus(Guid id, string status); //Change Transaction Status to Pending
+        Task ChangeTransactionStatus(Guid id, string status, string buyerId); //Change Transaction Status to Pending
 
     }
 }

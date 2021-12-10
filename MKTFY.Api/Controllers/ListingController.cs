@@ -131,14 +131,13 @@ namespace MKTFY.Api.Controllers
 
         }
 
-        // CREATE A GETDEALS ENDPOINT HERE!!!
-
+        // CREATE A GETDEALS ENDPOINT HERE
 
         /// <summary>
         /// Get a series of listings from an inputted string of terms.
         /// </summary>
         /// <param name="searchTerm"></param>
-        /// <param name="region"></param>
+        /// <param name="city"></param>
         /// <returns></returns>
         [HttpGet("search")]
         public async Task<ActionResult<List<ListingVM>>> GetBySearchTerm(string searchTerm, string city)
@@ -171,10 +170,19 @@ namespace MKTFY.Api.Controllers
         /// <param name="status"></param>
         /// <returns></returns>
         [HttpPut("{id}/{status")]
-        public async Task<ActionResult> ChangeTransactionStatus([FromRoute]Guid id, string status)
+        [HttpPut("listing/{id}/{status}")]
+        public async Task<ActionResult> ChangeTransactionStatus([FromRoute] Guid id, string status)
         {
-            await _listingService.ChangeTransactionStatus(id, status);
+            //Remember to validate status
+            string buyerId = "";
+
+            if (status == "Pending")
+            {
+                buyerId = User.GetId();
+            }
+            await _listingService.ChangeTransactionStatus(id, status, buyerId);
             return Ok();
+
         }
 
     }

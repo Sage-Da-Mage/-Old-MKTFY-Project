@@ -140,9 +140,11 @@ namespace MKTFY.Services.Services
 
         }
 
-        public async Task ChangeTransactionStatus(Guid id, string status)
+        public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
-            await _listingRepository.ChangeTransactionStatus(id, status);
+
+
+            await _listingRepository.ChangeTransactionStatus(id, status, buyerId);
         }
 
         /*private async Task<ListingVM> AddUploadDetails(Listing result)

@@ -38,7 +38,7 @@ namespace MKTFY.Services.Services.Interfaces
 
 
         // Change the StatusOfTransaction to an inputted string.
-        Task ChangeTransactionStatus(Guid id, string status);
+        Task ChangeTransactionStatus(Guid id, string status, string buyerId);
 
     }
 }

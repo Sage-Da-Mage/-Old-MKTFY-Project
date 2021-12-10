@@ -100,18 +100,7 @@ namespace MKTFY.Repositories.Repositories
 
             // Remove the entity from the database
             await _context.SaveChangesAsync();
-        }
-
-        // Get the pickup information for a purchase
-        public async Task<Listing> GetPickupInfo(Guid id)
-        {
-            var result = await _context.Listings
-                .Include(e => e.User)
-                .FirstOrDefaultAsync(i => i.Id == id);
-
-            if (result == null) throw new NotFoundException("The requested listing could not be found");
-            return result;
-        }
+        } 
 
         // ADD THE METHODS BELOW:
 
@@ -126,32 +115,65 @@ namespace MKTFY.Repositories.Repositories
             return results;
         }
 
-        public async Task<List<Listing>> GetBySearchTerm(string searchTermLowerCase, string region)
+        // 
+
+        public async Task<List<Listing>> GetBySearchTerm(string searchTermLowerCase, string city)
         {
             var results = await _context.Listings
-                .Where(listing => listing.City == region
-                    && listing.StatusOfTransaction == "listed" &&
-                   (listing.Description.ToLower().Contains(searchTermLowerCase) ||
-                    listing.ProductName.ToLower().Contains(searchTermLowerCase) ||
+                .Where(listing => listing.City == city                                
+                    && listing.StatusOfTransaction == "listed" &&                       //
+                   (listing.Description.ToLower().Contains(searchTermLowerCase) ||      // or
+                    listing.ProductName.ToLower().Contains(searchTermLowerCase) ||      // or
                     (listing.Category.Name.ToLower().Contains(searchTermLowerCase))))
                 .Include(e => e.ListingUploads).ThenInclude(e => e.UploadId)
                 .ToListAsync();
             return results;
         }
 
-        // GetPickupInfo(Guid id){
-        // }
+        // Get the pickup information for a purchase
+        public async Task<Listing> GetPickupInfo(Guid id)
+        {
+            var result = await _context.Listings
+                .Include(listing => listing.User)
+                .FirstOrDefaultAsync(i => i.Id == id);
+            if (result == null) throw new NotFoundException("The requested listing could not be found");
+            return result;
+
+        }
 
         // GetMyPurchases(string buyerId){
         // }
 
-        public async Task ChangeTransactionStatus(Guid id, string status)
+        public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
+            // Get the listing requested and throw an exception if you can't find it.
             var result = await _context.Listings
                 .Include(e => e.User)
                 .FirstOrDefaultAsync(i => i.Id == id);
             if (result == null) throw new NotFoundException("The requested listing could not be found");
+
+            // If the status has been Canceled, convert it to Listed and empty the BuyerId property
+            if (status == "Cancelled")
+            {
+                result.BuyerId = "";
+                status = "Listed";
+            }
+
+            // Remember check for incorrect status changes we should be unable to change the status of sold items
             result.StatusOfTransaction = status;
+
+            // A listing that hasn't been purchased yet needs a buyer in addition to the seller
+            if (status == "Pending")
+            {
+                result.BuyerId = buyerId;
+            }
+
+            // A listing that has been sold needs to have the DateTime added to the DateSold property
+            if (status == "Sold")
+            {
+                result.DateSold = DateTime.UtcNow;
+            }
+
             await _context.SaveChangesAsync();
         }
 
