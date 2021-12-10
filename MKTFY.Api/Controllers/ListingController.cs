@@ -124,8 +124,11 @@ namespace MKTFY.Api.Controllers
         /// <param name="city"></param>
         /// <returns></returns>
         [HttpGet("category/{categoryId")]
-        public async Task<ActionResult<List<ListingVM>>> GetByCategory([FromRoute]int categoryId, string city)
+        public async Task<ActionResult<List<ListingVM>>> GetByCategory([FromRoute]int categoryId, [FromQuery] string city)
         {
+            // If no city is inputted return a BadRequest message
+            if (city == null) return BadRequest(new { message = "region required" });
+
             // Get the users Id and then narrow the check for listing by the Category and city
             string userId = User.GetId();
             var result = await _listingService.GetByCategory(categoryId, city, userId);

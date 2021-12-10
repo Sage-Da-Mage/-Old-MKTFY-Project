@@ -4,6 +4,7 @@ using MKTFY.Models.ViewModels.Listing;
 using MKTFY.Repositories.Repositories;
 using MKTFY.Repositories.Repositories.Interfaces;
 using MKTFY.Services.Services.Interfaces;
+using MKTFY.Shared.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,10 @@ namespace MKTFY.Services.Services
 
         public async Task<ListingVM> Create(ListingAddVM src, string userId)
         {
+
+            //check string field for acceptable values
+            src.Condition = ValidateCondition(src.Condition);
+
             //Create the new Listing entity
             var newEntity = new Listing(src, userId);
 
@@ -74,6 +79,9 @@ namespace MKTFY.Services.Services
 
         public async Task<ListingVM> Update(ListingUpdateVM src)
         {
+            // The condition should be either "New" or "Used"
+            src.Condition = ValidateCondition(src.Condition);
+
             // Make the repository update the listing
             var updateData = new Listing(src);
             var result = await _listingRepository.Update(updateData);
@@ -103,12 +111,18 @@ namespace MKTFY.Services.Services
             // Get the User's last 3 search terms
             var searchHistory = await _searchRepository.GetPriorSearches(userId);
 
-            // Gind listings which match the search terms
+            // Get listings which match the search terms
             var dealListings = new List<Listing>();
             foreach (SearchItem search in searchHistory)
             {
                 var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, city, userId);
                 dealListings.AddRange(dealResults);
+            }
+
+            // If there are no deals present get the 10 most recent listings
+            if (dealListings.Count < 1)
+            {
+                dealListings = await _listingRepository.GetMostRecent(city, userId);
             }
 
             // return listings that match and are not the same listing.
@@ -178,12 +192,18 @@ namespace MKTFY.Services.Services
 
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
-
+            // If a transaction is cancelled then set the status to "Listed"
+            // + buyerId gets set to null
+            if (status == "Cancelled")
+            {
+                buyerId = null;
+                status = "Listed";
+            }
 
             await _listingRepository.ChangeTransactionStatus(id, status, buyerId);
         }
 
-        /*private async Task<ListingVM> AddUploadDetails(Listing result)
+        private async Task<ListingVM> AddUploadDetails(Listing result)
         {
             var model = new ListingVM(result);
             //get the Upload Id
@@ -191,14 +211,23 @@ namespace MKTFY.Services.Services
             //get the Upload Url
             foreach (Guid uploadId in uploadIds)
             {
-                var upload = await UploadRepository.Get(uploadId);
-                //model.UploadUrls.Add(upload.Url);
+                var upload = await _uploadRepository.Get(uploadId);
             }
-            //model.UploadIds = uploadIds;
-
             return model;
-        }*/
+        }
 
+        private string ValidateCondition(string condition)
+        {
+            // Make sure that the strings aren't case-sensitive
+            condition.ToLower();
+            condition = condition[0].ToString().ToUpper() + condition.Substring(1);
+            if (condition != "New" && condition != "Used")
+            {
+                // Throw an exception if the condition is invalid
+                throw new NotFoundException("Invalid Condition value, it must be New or Used");
+            }
+            return condition;
+        }
 
     }
 }

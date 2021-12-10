@@ -31,6 +31,9 @@ namespace MKTFY.Repositories.Repositories.Interfaces
 
         Task<List<Listing>> GetBySearchTerm(string searchTerm, string city, string userId);
 
+
+        Task<List<Listing>> GetMostRecent(string region, string userId);
+
         // Get the pickup information for a listing.
         Task<Listing> GetPickupInfo(Guid id);
 

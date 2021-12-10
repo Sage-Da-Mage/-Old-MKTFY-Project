@@ -168,6 +168,24 @@ namespace MKTFY.Repositories.Repositories
             return results;
         }
 
+        /// <summary>
+        /// Get the most recent Listings
+        /// </summary>
+        /// <param name="region"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<List<Listing>> GetMostRecent(string city, string userId)
+        {
+            var results = await _context.Listings
+                .Where(listing => listing.UserId != userId &&
+                listing.City == city)
+                .OrderByDescending(listing => listing.DateCreated)
+                .Take(10)
+                .Include(e => e.ListingUploads).ThenInclude(e => e.Upload)
+                .ToListAsync();
+            return results;
+        }
+
         // Get the pickup information for a purchase
         public async Task<Listing> GetPickupInfo(Guid id)
         {
