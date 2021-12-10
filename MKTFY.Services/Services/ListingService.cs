@@ -158,6 +158,14 @@ namespace MKTFY.Services.Services
             return models;
         }
 
+        // Get all the listings posted by the user regardless of status
+        public async Task<List<ListingSummaryVM>> GetAllMyListings(string userId)
+        {
+            var results = await _listingRepository.GetAllMyListings(userId);
+            var models = results.Select(Listing => new ListingSummaryVM(Listing)).ToList();
+            return models;
+        }
+
         public async Task<ListingsPlusSellerVM> GetListingWithSeller(Guid id)
         {
             var result = await _listingRepository.GetListingWithSeller(id);

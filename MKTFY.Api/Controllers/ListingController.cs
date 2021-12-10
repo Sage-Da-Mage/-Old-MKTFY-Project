@@ -209,6 +209,21 @@ namespace MKTFY.Api.Controllers
         }
 
         /// <summary>
+        /// Get all of the Users Listings, regardless of status
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("mylisting")]
+        public async Task<ActionResult<List<ListingSummaryVM>>> GetAllMyListings()
+        {
+            //get user id from the Http request
+            string userId = User.GetId();
+            var results = await _listingService.GetMyListings(userId, "all");
+            return Ok(results);
+        }
+
+
+        /// <summary>
         /// Get a listing with the details of the seller and the number of listings they have
         /// </summary>
         /// <param name="id"></param>

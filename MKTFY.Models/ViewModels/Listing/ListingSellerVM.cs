@@ -19,6 +19,8 @@ namespace MKTFY.Models.ViewModels.Listing
         {
             Id = src.Id;
             ProductName = src.ProductName;
+            Price = src.Price;
+            Phone = src.User.Phone;
             SellerName = src.User.FullName;
             SellerAddress = src.User.UserAddress;
         }
@@ -32,6 +34,16 @@ namespace MKTFY.Models.ViewModels.Listing
         /// The name of the product being sold.
         /// </summary>
         public string ProductName { get; set; }
+
+        /// <summary>
+        /// The amount that the Listing will sell for
+        /// </summary>
+        public decimal Price { get; set; }
+
+        /// <summary>
+        /// The phone # of the user
+        /// </summary>
+        public string Phone { get; set; }
 
         /// <summary>
         /// The name of the user selling the listing.

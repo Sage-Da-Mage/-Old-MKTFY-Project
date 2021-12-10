@@ -28,6 +28,8 @@ namespace MKTFY.Models.ViewModels.Listing
             Id = src.Id;
             ProductName = src.ProductName;
             Price = src.Price;
+            ImageUrl = src.ListingUploads.Select(id => id.Upload.Url).First();
+            StatusOfTransaction = src.StatusOfTransaction;
         }
 
         /// <summary>
@@ -44,6 +46,17 @@ namespace MKTFY.Models.ViewModels.Listing
         /// The amount that it costs to purchase the listing
         /// </summary>
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// The url for images related to the Listing
+        /// </summary>
+        public string ImageUrl { get; set; }
+
+
+        /// <summary>
+        /// The status of the Listing, in regard to getting sold
+        /// </summary>
+        public string StatusOfTransaction { get; set; }
 
     }
 }

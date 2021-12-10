@@ -218,6 +218,20 @@ namespace MKTFY.Repositories.Repositories
             return results;
         }
 
+        /// <summary>
+        /// Get all the users listing regardless of status
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<List<Listing>> GetAllMyListings(string userId)
+        {
+            //does not return listings that are in deleted status
+            var results = await _context.Listings
+               .Where(listing => listing.UserId == userId && listing.StatusOfTransaction != "Deleted")
+               .ToListAsync();
+            return results;
+        }
+
         public async Task<Listing> GetListingWithSeller(Guid id)
         {
             var result = await _context.Listings
