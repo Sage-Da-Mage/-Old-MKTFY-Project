@@ -35,6 +35,7 @@ namespace MKTFY.Models.ViewModels.User
         /// Should be in the format of a 10 digit set of numbers
         /// </summary>
         [Required]
+        [MinLength(10, ErrorMessage = "The property {0} should have a minimum of {1} digit")]
         public string Phone { get; set; }
 
         /// <summary>
