@@ -60,5 +60,18 @@ namespace MKTFY.Repositories.Repositories
             await _context.SaveChangesAsync();
 
         }
+
+        // Get a list of ListingUploads from a specific listing
+        public async Task<List<ListingUpload>> GetListingUploads(Guid id)
+        {
+            var result = await _context.ListingUploads
+                .Include(u => u.Upload)
+                .Where(i => i.ListingId == id)
+                .ToListAsync();
+            if (result == null)
+                throw new NotFoundException("The requested upload could not be found");
+            return result;
+        }
+
     }
 }

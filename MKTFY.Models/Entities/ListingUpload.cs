@@ -21,5 +21,17 @@ namespace MKTFY.Models.Entities
         /// </summary>
         public Guid UploadId { get; set; }
 
+
+
+        /// <summary>
+        /// Navigation property to find an upload
+        /// </summary>
+        public Upload Upload { get; set; }
+        
+        /// <summary>
+        /// Navigatoin property to find a Listing
+        /// </summary>
+        public Listing Listing { get; set; }
+
     }
 }

@@ -131,7 +131,19 @@ namespace MKTFY.Api.Controllers
 
         }
 
-        // CREATE A GETDEALS ENDPOINT HERE
+        /// <summary>
+        /// Get listings based on the users search history. "Listings tailored for the user"
+        /// </summary>
+        /// <param name="city"></param>
+        /// <returns></returns>
+        [HttpGet("listing/category/deals")]
+        public async Task<ActionResult<List<ListingVM>>> GetDeals(string city)
+        {
+            string userId = User.GetId();
+            var result = await _listingService.GetDeals(userId, city);
+            return Ok(result);
+        }
+
 
         /// <summary>
         /// Get a series of listings from an inputted string of terms.

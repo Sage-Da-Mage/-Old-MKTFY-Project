@@ -29,6 +29,9 @@ namespace MKTFY.Services.Services.Interfaces
         // Get a series of listings by an inputted Category
         Task<List<ListingVM>> GetByCategory(int categoryId, string region);
 
+        // Get a series of listing based on the users previous searches/location
+        Task<List<ListingVM>> GetDeals(string userId, string city);
+
 
         // Get the pickup info for a listing
         Task<ListingSellerVM> GetPickupInfo(Guid id);

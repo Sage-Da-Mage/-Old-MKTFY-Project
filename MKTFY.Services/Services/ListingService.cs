@@ -98,22 +98,24 @@ namespace MKTFY.Services.Services
             return models;
         }
 
-        /*public async Task<List<ListingVM>> GetDeals(string userId, string region)
+       public async Task<List<ListingVM>> GetDeals(string userId, string city)
         {
-            //retrieve user's last 3 search terms
-            var searchHistory = await _searchRepository.GetLatestSearches(userId);
+            // Get the User's last 3 search terms
+            var searchHistory = await _searchRepository.GetPriorSearches(userId);
 
-            //find listings matching search terms
+            // Gind listings which match the search terms
             var dealListings = new List<Listing>();
-            foreach (SearchHistory search in searchHistory)
+            foreach (SearchItem search in searchHistory)
             {
-                var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, region);
+                var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, city);
                 dealListings.AddRange(dealResults);
             }
+
+            // return listings that match and are not the same listing.
             var distinctListings = dealListings.Distinct();
             var models = distinctListings.Select(listing => new ListingVM(listing)).ToList();
             return models;
-        }*/
+        }
 
         public async Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string region)
         {

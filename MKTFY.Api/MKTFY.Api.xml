@@ -84,7 +84,7 @@
             Get a series of listings from an inputted string of terms.
             </summary>
             <param name="searchTerm"></param>
-            <param name="region"></param>
+            <param name="city"></param>
             <returns></returns>
         </member>
         <member name="M:MKTFY.Api.Controllers.ListingController.GetPickupInfo(System.Guid)">

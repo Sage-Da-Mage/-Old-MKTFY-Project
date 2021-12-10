@@ -44,9 +44,6 @@ namespace MKTFY.Repositories.Repositories
             if (result == null)
                 throw new NotFoundException("The requested listing could not be found");
 
-
-
-
             // return the retrieved entry
             return result;
 
@@ -67,9 +64,44 @@ namespace MKTFY.Repositories.Repositories
         {
 
             // Get the entity to update
-            var result = await _context.Listings.FirstOrDefaultAsync(i => i.Id == src.Id) ;
+            var result = await _context.Listings
+                .Include(u => u.ListingUploads).ThenInclude(u => u.Upload)
+                .FirstOrDefaultAsync(i => i.Id == src.Id) ;
+                    
+            // If there is no matching Listing then return an exception
             if (result == null)
                 throw new NotFoundException("The requested listing could not be found");
+
+
+            // Compare the old and new UploadIds to confirm changes
+            // - REMEMBER TO MAKE AN EXCEPTION FOR A NULL IMAGE
+            var listofResultUploadIds = result.ListingUploads.Select(u => u.UploadId).ToList();
+            var listofSrcUploadIds = src.ListingUploads.Select(u => u.UploadId).ToList();
+            
+            var resultNotSrc = listofResultUploadIds.Except(listofSrcUploadIds).ToList();
+            var srcNotResult = listofSrcUploadIds.Except(listofResultUploadIds).ToList();
+
+
+            // Delete the uploads that need deleting based on the above check
+            foreach (var upload in result.ListingUploads)
+            {
+                if (resultNotSrc.Contains(upload.UploadId))
+                {
+                    //remove the selected upload from listing and listingUpload 
+                    result.ListingUploads.Remove(upload);
+                    //remove the image from Uploads
+                    _context.Uploads.Remove(upload.Upload);
+                }
+            }
+
+            //add any new images to listingUploads
+            foreach (var uploadId in srcNotResult)
+            {
+                var listingUpload = src.ListingUploads.First(i => i.UploadId == uploadId);
+
+                //add to the listing 
+                result.ListingUploads.Add(listingUpload);
+            }
 
 
             // Preform the update on the Listing entity
@@ -102,7 +134,6 @@ namespace MKTFY.Repositories.Repositories
             await _context.SaveChangesAsync();
         } 
 
-        // ADD THE METHODS BELOW:
 
         public async Task<List<Listing>> GetByCategory(int categoryId, string region)
         {
@@ -141,8 +172,17 @@ namespace MKTFY.Repositories.Repositories
 
         }
 
-        // GetMyPurchases(string buyerId){
-        // }
+        /*public async Task<List<Listing>> GetMyPurchases(string buyerId)
+        {
+
+
+        }
+
+        public async Task<List<Listing>> GetMyListings(string userId, string status)
+        {
+  
+
+        }*/
 
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
