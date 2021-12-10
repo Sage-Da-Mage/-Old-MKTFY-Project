@@ -80,5 +80,18 @@ namespace MKTFY.Services.Services
             // Inform the repository to delete the specified Listing Entity
             await _listingRepository.Delete(id);
         }
+
+        public async Task<ListingSellerVM> GetPickupInfo(Guid id)
+        {
+
+            var result = await _listingRepository.GetPickupInfo(id);
+
+            var model = new ListingSellerVM(result);
+
+            return model;
+
+        }
+
+
     }
 }

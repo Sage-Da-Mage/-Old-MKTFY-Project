@@ -1,4 +1,5 @@
 ﻿using MKTFY.Models.Entities;
+using MKTFY.Models.ViewModels.Listing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace MKTFY.Repositories.Repositories.Interfaces
 
         // Delete a listing
         Task Delete(Guid id);
+
+        // Get the pickup information for a listing.
+        Task<Listing> GetPickupInfo(Guid id);
 
         // ADD THE METHODS BELOW (after adding them to ListingRepository.cs):
 

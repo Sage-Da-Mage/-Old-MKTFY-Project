@@ -97,6 +97,17 @@ namespace MKTFY.Repositories.Repositories
             await _context.SaveChangesAsync();
         }
 
+        // Get the pickup information for a purchase
+        public async Task<Listing> GetPickupInfo(Guid id)
+        {
+            var result = await _context.Listings
+                .Include(e => e.User)
+                .FirstOrDefaultAsync(i => i.Id == id));
+
+            if (result == null) throw new NotFoundException("The requested listing could not be found");
+            return result;
+        }
+
         // ADD THE METHODS BELOW:
 
         // GetbyCategory (int category Id, string City, string userId){

@@ -115,5 +115,18 @@ namespace MKTFY.Api.Controllers
             // Return a 200 response to confirm it has completed
             return Ok();
         }
+    
+        /// <summary>
+        /// The endpoint for getting the information on where to pick up a listing once purchaced.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("pickup")]
+        public async Task<ActionResult<ListingSellerVM>> GetPickupInfo(Guid id)
+        {
+            var result = await_listingService.GetPickupInfo(id);
+            return Ok(result);
+        }
+
     }
 }
