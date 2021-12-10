@@ -71,10 +71,23 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.GetPickupInfo(System.Guid)">
+            <summary>
+            The endpoint for getting the information on where to pick up a listing once purchaced.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:MKTFY.Api.Controllers.UploadController">
             <summary>
             The controller for uploading images for the MKTFY Project.
             </summary>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.UploadController.#ctor(MKTFY.Services.Services.Interfaces.IUploadService)">
+            <summary>
+            Adding the contex for the services.
+            </summary>
+            <param name="uploadService"></param>
         </member>
         <member name="M:MKTFY.Api.Controllers.UploadController.UploadImage">
             <summary>
@@ -208,6 +221,11 @@
             </summary>
             <param name="operation"></param>
             <param name="context"></param>
+        </member>
+        <member name="T:MKTFY.API.Controllers.FAQController">
+            <summary>
+            The controller that manages the FAQs.
+            </summary>
         </member>
     </members>
 </doc>

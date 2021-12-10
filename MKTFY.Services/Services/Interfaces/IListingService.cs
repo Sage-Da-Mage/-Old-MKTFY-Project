@@ -24,5 +24,7 @@ namespace MKTFY.Services.Services.Interfaces
         // Delete a Listing
         Task Delete(Guid id);
 
+        // Get the pickup info for a listing
+        Task<ListingSellerVM> GetPickupInfo(Guid id);
     }
 }

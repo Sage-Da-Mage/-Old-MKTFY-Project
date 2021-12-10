@@ -4,6 +4,48 @@
         <name>MKTFY.Models</name>
     </assembly>
     <members>
+        <member name="T:MKTFY.Models.Entities.FAQ">
+            <summary>
+            The Entity for FAQs, used to hold all the properties used for FAQs.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.FAQ.#ctor">
+            <summary>
+            Empty Constructor
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.Entities.FAQ.#ctor(MKTFY.Models.ViewModels.FAQ.FAQAddVM)">
+            <summary>
+            A constructor for creating an FAQ entity from an FAQVM
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="M:MKTFY.Models.Entities.FAQ.#ctor(MKTFY.Models.ViewModels.FAQ.FAQUpdateVM)">
+            <summary>
+            A Constructor for updating an FAQ entity previously existing from an FAQVM
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.Entities.FAQ.Id">
+            <summary>
+            The Id is required so that we can differenciate the FAQ entities.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.FAQ.Question">
+            <summary>
+            The question asked frequently to be answered.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.FAQ.Answer">
+            <summary>
+            The Answer to the aformentioned question.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.FAQ.DateCreated">
+            <summary>
+            The time (in DateTime) that the FAQ was created.
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.Entities.Listing">
             <summary>
             The Listing entity used throughout the MKTFY project.
@@ -215,6 +257,72 @@
             ExpiresIn represents how long (in seconds) that the AccessToken will be valid for.
             </summary>
         </member>
+        <member name="T:MKTFY.Models.ViewModels.FAQ.FAQAddVM">
+            <summary>
+            The class for generating a new FAQ.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQAddVM.Question">
+            <summary>
+            The Question that has been asked frequently.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQAddVM.Answer">
+            <summary>
+            The Answer to the question asked.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.FAQ.FAQUpdateVM">
+            <summary>
+            The Class for updating FAQs.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQUpdateVM.Id">
+            <summary>
+            The Id for differenciating FAQs and determine which FAQ to update.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQUpdateVM.Question">
+            <summary>
+            The Question being asked frequently.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQUpdateVM.Answer">
+            <summary>
+            The Answer to the aformentioned question.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.FAQ.FAQVM">
+            <summary>
+            The View model class for FAQs.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.FAQ.FAQVM.#ctor">
+            <summary>
+            The empty constructor for FAQVM.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.FAQ.FAQVM.#ctor(MKTFY.Models.Entities.FAQ)">
+            <summary>
+            The constructor for generating an FAQVM from an entity
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQVM.Id">
+            <summary>
+            The Id of the FAQVM to differenciate it from other FAQVMs.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQVM.Question">
+            <summary>
+            The Question of the FAQVM
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.FAQ.FAQVM.Answer">
+            <summary>
+            The Answer to the above question. 
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.ViewModels.Listing.ListingAddVM">
             <summary>
             This View Model is for adding a listing
@@ -254,6 +362,37 @@
         <member name="P:MKTFY.Models.ViewModels.Listing.ListingAddVM.City">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingSellerVM">
+            <summary>
+            The View Model Class used for the seller of a Listing.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingSellerVM.#ctor(MKTFY.Models.Entities.Listing)">
+            <summary>
+            The constructor for generating a ListingSellerVM from a Listing
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSellerVM.Id">
+            <summary>
+            The Id of the user selling the Listing.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSellerVM.ProductName">
+            <summary>
+            The name of the product being sold.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSellerVM.SellerName">
+            <summary>
+            The name of the user selling the listing.
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSellerVM.SellerAddress">
+            <summary>
+            The address of the user selling the listing.
             </summary>
         </member>
         <member name="T:MKTFY.Models.ViewModels.Listing.ListingUpdateVM">
@@ -389,9 +528,9 @@
             
             </summary>
         </member>
-        <member name="P:MKTFY.Models.ViewModels.Upload.UploadResultVM.FileName">
+        <member name="P:MKTFY.Models.ViewModels.Upload.UploadResultVM.Id">
             <summary>
-             Name of the Uploaded file
+             Id of the Uploaded file
             </summary>
         </member>
         <member name="T:MKTFY.Models.ViewModels.User.UserAddVM">
