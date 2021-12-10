@@ -66,7 +66,8 @@ namespace MKTFY.Repositories.Repositories
             // Get the entity to update
             var result = await _context.Listings
                 .Include(u => u.ListingUploads).ThenInclude(u => u.Upload)
-                .FirstOrDefaultAsync(i => i.Id == src.Id) ;
+                .Include(u => u.ListingUploads).ThenInclude(u => u.Upload)
+                .FirstOrDefaultAsync(i => i.Id == src.Id);
                     
             // If there is no matching Listing then return an exception
             if (result == null)
@@ -135,29 +136,35 @@ namespace MKTFY.Repositories.Repositories
         } 
 
 
-        public async Task<List<Listing>> GetByCategory(int categoryId, string region)
+        public async Task<List<Listing>> GetByCategory(int categoryId, string city, string userId)
         {
             var results = await _context.Listings
                 .Where(listing => listing.CategoryId == categoryId &&
-                    listing.City == region &&
-                    listing.StatusOfTransaction == "Listed")
-                .Include(e => e.ListingUploads).ThenInclude(e => e.UploadId)
+                    listing.City == city &&
+                    listing.StatusOfTransaction == "Listed" &&
+                    listing.UserId != userId)
+                .Include(u => u.ListingUploads).ThenInclude(u => u.UploadId)
                 .ToListAsync();
             return results;
         }
 
-        // 
 
-        public async Task<List<Listing>> GetBySearchTerm(string searchTermLowerCase, string city)
+        public async Task<List<Listing>> GetBySearchTerm(string searchTermLowerCase, string city, string userId)
         {
             var results = await _context.Listings
-                .Where(listing => listing.City == city                                
-                    && listing.StatusOfTransaction == "listed" &&                       //
+                .Where(listing => listing.City == city &&
+                    
+                    // Narrow down what the search can find appropriately (don't show sold Listings etc.)
+                    listing.StatusOfTransaction == "Listed" &&
+                    listing.UserId != userId &&
+                    listing.StatusOfTransaction == "listed" &&
+                    
                    (listing.Description.ToLower().Contains(searchTermLowerCase) ||      // or
                     listing.ProductName.ToLower().Contains(searchTermLowerCase) ||      // or
                     (listing.Category.Name.ToLower().Contains(searchTermLowerCase))))
                 .Include(e => e.ListingUploads).ThenInclude(e => e.UploadId)
                 .ToListAsync();
+            
             return results;
         }
 

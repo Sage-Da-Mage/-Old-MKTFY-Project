@@ -91,9 +91,9 @@ namespace MKTFY.Services.Services
             await _listingRepository.Delete(id);
         }
 
-        public async Task<List<ListingVM>> GetByCategory(int categoryId, string region)
+        public async Task<List<ListingVM>> GetByCategory(int categoryId, string city, string userId)
         {
-            var results = await _listingRepository.GetByCategory(categoryId, region);
+            var results = await _listingRepository.GetByCategory(categoryId, city, userId);
             var models = results.Select(listing => new ListingVM(listing)).ToList();
             return models;
         }
@@ -107,7 +107,7 @@ namespace MKTFY.Services.Services
             var dealListings = new List<Listing>();
             foreach (SearchItem search in searchHistory)
             {
-                var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, city);
+                var dealResults = await _listingRepository.GetBySearchTerm(search.SearchTerm, city, userId);
                 dealListings.AddRange(dealResults);
             }
 
@@ -117,7 +117,7 @@ namespace MKTFY.Services.Services
             return models;
         }
 
-        public async Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string region)
+        public async Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string city)
         {
             //save search term to SearchItem Table
             var newSearchEntity = new SearchItem(src);
@@ -125,7 +125,7 @@ namespace MKTFY.Services.Services
             await _searchRepository.Save(newSearchEntity);
 
             //get search
-            var results = await _listingRepository.GetBySearchTerm(src.SearchTerm, region);
+            var results = await _listingRepository.GetBySearchTerm(src.SearchTerm, city, src.UserId);
             var models = results.Select(listing => new ListingVM(listing)).ToList();
             return models;
         }

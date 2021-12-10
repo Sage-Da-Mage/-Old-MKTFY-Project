@@ -92,7 +92,7 @@ namespace MKTFY.Api.Controllers
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("listing/{id}")]
         public async Task<ActionResult<ListingVM>> Update([FromBody] ListingUpdateVM data)
         {
             // Update Listing entity from the service layer
@@ -126,7 +126,10 @@ namespace MKTFY.Api.Controllers
         [HttpGet("category/{categoryId")]
         public async Task<ActionResult<List<ListingVM>>> GetByCategory([FromRoute]int categoryId, string city)
         {
-            var result = await _listingService.GetByCategory(categoryId, city);
+            // Get the users Id and then narrow the check for listing by the Category and city
+            string userId = User.GetId();
+            var result = await _listingService.GetByCategory(categoryId, city, userId);
+            
             return Ok(result);
 
         }
@@ -174,27 +177,6 @@ namespace MKTFY.Api.Controllers
             return Ok(result);
         }
 
-
-        /// <summary>
-        /// The endpoint for changing the transaction status of a listing.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="status"></param>
-        /// <returns></returns>
-        [HttpPut("listing/{id}/{status}")]
-        public async Task<ActionResult> ChangeTransactionStatus([FromRoute] Guid id, string status)
-        {
-            //Remember to validate status
-            string buyerId = "";
-
-            if (status == "Pending")
-            {
-                buyerId = User.GetId();
-            }
-            await _listingService.ChangeTransactionStatus(id, status, buyerId);
-            return Ok();
-        }
-
         /// <summary>
         /// Get the list of the Listings that the user has purchased)
         /// </summary>
@@ -237,7 +219,32 @@ namespace MKTFY.Api.Controllers
             return Ok(await _listingService.GetListingWithSeller(id));
         }
 
+        /// <summary>
+        /// The endpoint for changing the transaction status of a listing.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        [HttpPut("listing/{id}/{status}")]
+        public async Task<ActionResult> ChangeTransactionStatus([FromRoute] Guid id, string status)
+        {
 
+            // Confirm the status is valid, return badrequest if not
+            string[] validStatus = { "Listed", "Deleted", "Pending", "Cancelled", "Sold" };
+            if (!validStatus.Contains(status))
+            {
+                return BadRequest(new { message = "invalid status" });
+            }
+
+            string buyerId = "";
+
+            if (status == "Pending")
+            {
+                buyerId = User.GetId();
+            }
+            await _listingService.ChangeTransactionStatus(id, status, buyerId);
+            return Ok();
+        }
 
     }
 }

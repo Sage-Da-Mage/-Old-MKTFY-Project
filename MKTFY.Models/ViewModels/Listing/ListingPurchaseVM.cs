@@ -27,6 +27,7 @@ namespace MKTFY.Models.ViewModels.Listing
             Id = src.Id;
             ProductName = src.ProductName;
             Price = src.Price;
+            StatusOfTransaction = src.StatusOfTransaction;
             DateSold = src.DateSold;
         }
 
@@ -44,6 +45,11 @@ namespace MKTFY.Models.ViewModels.Listing
         /// The amount that it would take to purchace the Listing
         /// </summary>
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// The status of the Listing
+        /// </summary>
+        public string StatusOfTransaction { get; set; }
 
         /// <summary>
         /// The DateTime for when the Listing was purchased

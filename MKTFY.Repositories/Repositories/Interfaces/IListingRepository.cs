@@ -27,9 +27,9 @@ namespace MKTFY.Repositories.Repositories.Interfaces
 
 
 
-        Task<List<Listing>> GetByCategory(int categoryId, string City);
+        Task<List<Listing>> GetByCategory(int categoryId, string city, string userId);
 
-        Task<List<Listing>> GetBySearchTerm(string searchTerm, string region);
+        Task<List<Listing>> GetBySearchTerm(string searchTerm, string city, string userId);
 
         // Get the pickup information for a listing.
         Task<Listing> GetPickupInfo(Guid id);

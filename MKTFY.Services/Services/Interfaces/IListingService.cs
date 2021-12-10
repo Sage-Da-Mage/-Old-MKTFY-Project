@@ -27,7 +27,7 @@ namespace MKTFY.Services.Services.Interfaces
         Task Delete(Guid id);
 
         // Get a series of listings by an inputted Category
-        Task<List<ListingVM>> GetByCategory(int categoryId, string region);
+        Task<List<ListingVM>> GetByCategory(int categoryId, string city, string userId);
 
         // Get a series of listing based on the users previous searches/location
         Task<List<ListingVM>> GetDeals(string userId, string city);
@@ -37,8 +37,7 @@ namespace MKTFY.Services.Services.Interfaces
         Task<ListingSellerVM> GetPickupInfo(Guid id);
 
         // Get a series of lisitings by an inputted string of terms.
-        Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string region);
-
+        Task<List<ListingVM>> GetBySearchTerm(SearchCreateVM src, string city);
 
         // Change the StatusOfTransaction to an inputted string.
         Task ChangeTransactionStatus(Guid id, string status, string buyerId);
