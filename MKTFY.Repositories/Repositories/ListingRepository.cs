@@ -184,6 +184,33 @@ namespace MKTFY.Repositories.Repositories
 
         }*/
 
+        /// <summary>
+        /// Get the list of Listings that the user has purchased
+        /// </summary>
+        /// <param name="buyerId"></param>
+        /// <returns></returns>
+        public async Task<List<Listing>> GetMyPurchases(string buyerId)
+        {
+            var results = await _context.Listings
+               .Where(listing => listing.BuyerId == buyerId)
+               .ToListAsync();
+            return results;
+        }
+
+        /// <summary>
+        /// Get the list of Listings that the user has posted
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public async Task<List<Listing>> GetMyListings(string userId, string status)
+        {
+            var results = await _context.Listings
+               .Where(listing => listing.UserId == userId && listing.StatusOfTransaction == status)
+               .ToListAsync();
+            return results;
+        }
+
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
             // Get the listing requested and throw an exception if you can't find it.

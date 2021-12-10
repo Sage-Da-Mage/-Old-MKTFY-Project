@@ -182,6 +182,16 @@
             The Upload Id that is connected to the Listing.
             </summary>
         </member>
+        <member name="P:MKTFY.Models.Entities.ListingUpload.Upload">
+            <summary>
+            Navigation property to find an upload
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.Entities.ListingUpload.Listing">
+            <summary>
+            Navigatoin property to find a Listing
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.Entities.SearchItem">
             <summary>
             The entity that represents a search done on the site
@@ -443,6 +453,42 @@
             The Id of an upload.
             </summary>
         </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM">
+            <summary>
+            This is the VM used during a purchase of a listing.
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.#ctor">
+            <summary>
+            The empty constructor for ListingPurchaseVM
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.#ctor(MKTFY.Models.Entities.Listing)">
+            <summary>
+            The constructor that takes in a Listing.
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.Id">
+            <summary>
+            The Id of the Listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.ProductName">
+            <summary>
+            The name of the product
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.Price">
+            <summary>
+            The amount that it would take to purchace the Listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingPurchaseVM.DateSold">
+            <summary>
+            The DateTime for when the Listing was purchased
+            </summary>
+        </member>
         <member name="T:MKTFY.Models.ViewModels.Listing.ListingSellerVM">
             <summary>
             The View Model Class used for the seller of a Listing.
@@ -472,6 +518,37 @@
         <member name="P:MKTFY.Models.ViewModels.Listing.ListingSellerVM.SellerAddress">
             <summary>
             The address of the user selling the listing.
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Listing.ListingSummaryVM">
+            <summary>
+            The ListingSummaryVM class for providing a brief overview of a Listing
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingSummaryVM.#ctor">
+            <summary>
+            The empty constructor for ListingSummaryVM
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Listing.ListingSummaryVM.#ctor(MKTFY.Models.Entities.Listing)">
+            <summary>
+            The Constructor that takes in a Listing
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSummaryVM.Id">
+            <summary>
+            The Id of the listing
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSummaryVM.ProductName">
+            <summary>
+            The name of the product
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Listing.ListingSummaryVM.Price">
+            <summary>
+            The amount that it costs to purchase the listing
             </summary>
         </member>
         <member name="T:MKTFY.Models.ViewModels.Listing.ListingUpdateVM">
@@ -631,6 +708,42 @@
         <member name="P:MKTFY.Models.ViewModels.Upload.UploadResultVM.Id">
             <summary>
              Id of the Uploaded file
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Upload.UploadUrlVM">
+            <summary>
+            The VM for for just the Url of an upload
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Upload.UploadUrlVM.Url">
+            <summary>
+            The uploads Url
+            </summary>
+        </member>
+        <member name="T:MKTFY.Models.ViewModels.Upload.UploadVM">
+            <summary>
+            The VM class for Uploads
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Upload.UploadVM.#ctor">
+            <summary>
+            The empty constructor for UploadVm
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.Upload.UploadVM.#ctor(MKTFY.Models.Entities.Upload)">
+            <summary>
+            The UploadVM constructor taking in an Upload
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Upload.UploadVM.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.Upload.UploadVM.Url">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:MKTFY.Models.ViewModels.User.UserAddVM">

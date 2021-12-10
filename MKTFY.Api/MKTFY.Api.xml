@@ -79,6 +79,13 @@
             <param name="city"></param>
             <returns></returns>
         </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.GetDeals(System.String)">
+            <summary>
+            Get listings based on the users search history. "Listings tailored for the user"
+            </summary>
+            <param name="city"></param>
+            <returns></returns>
+        </member>
         <member name="M:MKTFY.Api.Controllers.ListingController.GetBySearchTerm(System.String,System.String)">
             <summary>
             Get a series of listings from an inputted string of terms.
@@ -99,6 +106,19 @@
             The endpoint for changing the transaction status of a listing.
             </summary>
             <param name="id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.GetMyPurchases">
+            <summary>
+            Get the list of the Listings that the user has purchased)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MKTFY.Api.Controllers.ListingController.GetMyListings(System.String)">
+            <summary>
+            Get the list of the Listings that the user has posted
+            </summary>
             <param name="status"></param>
             <returns></returns>
         </member>

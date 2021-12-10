@@ -25,22 +25,20 @@ namespace MKTFY.Repositories.Repositories.Interfaces
         // Delete a listing
         Task Delete(Guid id);
 
-        // Get the pickup information for a listing.
-        Task<Listing> GetPickupInfo(Guid id);
 
-        // ADD THE METHODS BELOW (after adding them to ListingRepository.cs):
 
         Task<List<Listing>> GetByCategory(int categoryId, string City);
 
-
         Task<List<Listing>> GetBySearchTerm(string searchTerm, string region);
 
+        // Get the pickup information for a listing.
+        Task<Listing> GetPickupInfo(Guid id);
 
-        // GetPickupInfo(Guid id){
-        // }
+        // Get the list of Listings that the user has purchased
+        Task<List<Listing>> GetMyPurchases(string buyerId);
 
-        // GetMyPurchases(string buyerId){
-        // }
+        // Get the list of Listings that the user has posted
+        Task<List<Listing>> GetMyListings(string userId, string status);
 
         /// <summary>
         /// Change the Transaction status of the listing.

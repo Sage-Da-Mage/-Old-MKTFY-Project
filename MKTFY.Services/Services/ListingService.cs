@@ -142,6 +142,23 @@ namespace MKTFY.Services.Services
 
         }
 
+        // Get the listings that the user has purchased
+        public async Task<List<ListingPurchaseVM>> GetMyPurchases(string userId)
+        {
+            var results = await _listingRepository.GetMyPurchases(userId);
+            var models = results.Select(Listing => new ListingPurchaseVM(Listing)).ToList();
+            return models;
+        }
+
+        // Get the listings posted by the User
+        public async Task<List<ListingSummaryVM>> GetMyListings(string userId, string status)
+        {
+            var results = await _listingRepository.GetMyListings(userId, status);
+            var models = results.Select(Listing => new ListingSummaryVM(Listing)).ToList();
+            return models;
+        }
+
+
         public async Task ChangeTransactionStatus(Guid id, string status, string buyerId)
         {
 

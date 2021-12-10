@@ -181,7 +181,6 @@ namespace MKTFY.Api.Controllers
         /// <param name="id"></param>
         /// <param name="status"></param>
         /// <returns></returns>
-        [HttpPut("{id}/{status")]
         [HttpPut("listing/{id}/{status}")]
         public async Task<ActionResult> ChangeTransactionStatus([FromRoute] Guid id, string status)
         {
@@ -194,8 +193,41 @@ namespace MKTFY.Api.Controllers
             }
             await _listingService.ChangeTransactionStatus(id, status, buyerId);
             return Ok();
+        }
+
+        /// <summary>
+        /// Get the list of the Listings that the user has purchased)
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("mypurchases")]
+        public async Task<ActionResult<List<ListingPurchaseVM>>> GetMyPurchases()
+        {
+            string userId = User.GetId();
+            var results = await _listingService.GetMyPurchases(userId);
+
+            // Return the list of purchaced listings
+            return Ok(results);
+        }
+
+        /// <summary>
+        /// Get the list of the Listings that the user has posted
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("mylisting/{status}")]
+        public async Task<ActionResult<List<ListingSummaryVM>>> GetMyListings(string status)
+        {
+            string userId = User.GetId();
+            var results = await _listingService.GetMyListings(userId, status);
+            
+            // Return the list of Listings the user has posted
+            return Ok(results);
 
         }
+
+
 
     }
 }
