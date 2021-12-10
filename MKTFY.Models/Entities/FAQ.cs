@@ -25,7 +25,7 @@ namespace MKTFY.Models.Entities
         /// A constructor for creating an FAQ entity from an FAQVM
         /// </summary>
         /// <param name="src"></param>
-        public FAQ(FAQCreateVM src)
+        public FAQ(FAQAddVM src)
         {
             Question = src.Question;
             Answer = src.Answer;
